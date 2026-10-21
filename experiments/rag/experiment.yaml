@@ -1,0 +1,19 @@
+# Pipeline C — retrieval-augmented translation with provenance-tracked lexical evidence.
+pipeline: C_retrieval
+prompt_templates: {retrieval_augmented: "1.0.0"}
+retrieval:
+  store: data/annotations/lexical_evidence.jsonl   # currently EMPTY
+  minimum_evidence_status: transcription_verified
+  top_k: 5
+purpose: Test whether verified period lexical evidence improves historical-sense accuracy.
+prerequisites:
+  - Verified evidence entries from consulted sources (Huguet, DMF, Cotgrave, etc.), with rights checked.
+  - Leakage check: no evidence text overlapping held-out passages or references (`nr corpus leakage`).
+planned_runs:
+  - id: pilot-dev
+    splits: [development, validation]
+    provider: TBD
+    model: TBD
+    status: blocked (no verified evidence)
+notes:
+  - With an empty store, C abstains from evidence-dependent claims and records the limitation.

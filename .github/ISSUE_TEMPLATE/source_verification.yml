@@ -1,0 +1,56 @@
+name: Source verification
+description: Propose moving a registered source to the next verification status.
+title: "[SOURCE] <source_id>: <current> → <proposed>"
+labels: ["source-verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Statuses move **one rung at a time**: candidate → located → provenance_checked →
+        transcription_verified → expert_reviewed. Finding a digitised copy (located) is **not**
+        authentication of a printed witness (provenance_checked). See docs/source-authentication.md.
+  - type: input
+    id: source_id
+    attributes:
+      label: Source ID
+      placeholder: SRC-RABELAIS-PANTAGRUEL-1532
+    validations:
+      required: true
+  - type: dropdown
+    id: proposed_status
+    attributes:
+      label: Proposed status
+      options: [located, provenance_checked, transcription_verified, expert_reviewed, rejected]
+    validations:
+      required: true
+  - type: textarea
+    id: identifiers
+    attributes:
+      label: Identifiers
+      description: Stable URL / ARK / IIIF, holding institution, shelfmark, catalogue identifier, date accessed.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: |
+        What was compared against what (e.g. title page, colophon, printer's device, collation against
+        USTC/BnF record), exact page/folio/image references, and who did it.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Rights and licensing
+      description: Licence or terms for the facsimile/transcription; may text be committed?
+    validations:
+      required: true
+  - type: textarea
+    id: uncertainty
+    attributes:
+      label: Remaining uncertainty
+  - type: input
+    id: independent_checker
+    attributes:
+      label: Independent checker (required for transcription_verified and above)

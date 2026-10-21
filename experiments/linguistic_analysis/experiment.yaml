@@ -1,0 +1,22 @@
+# Pipeline D — explicit structured linguistic analysis before literal translation.
+pipeline: D_structured
+prompt_templates: {structured_analysis: "1.0.0"}
+steps:
+  - language identification and code-switching
+  - word/clause segmentation
+  - morphology
+  - historical syntax
+  - polysemous terms with period senses
+  - lexical evidence (as pipeline C)
+  - literal modern French
+  - literal modern English
+  - unresolved ambiguity
+purpose: Test whether explicit analysis reduces grammatical and historical-lexical errors and preserves ambiguity.
+planned_runs:
+  - id: pilot-dev
+    splits: [development, validation]
+    provider: TBD
+    model: TBD
+    status: not_started
+notes:
+  - Software pre-analysis is heuristic and labelled as such in the prompt.

@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/evaluation_result.schema.json",
+  "$defs": {
+    "CorpusCategory": {
+      "enum": [
+        "french_prose",
+        "french_poetry",
+        "latin_prose",
+        "latin_verse",
+        "mixed"
+      ],
+      "title": "CorpusCategory",
+      "type": "string"
+    },
+    "DatasetSplit": {
+      "enum": [
+        "unassigned",
+        "development",
+        "validation",
+        "test"
+      ],
+      "title": "DatasetSplit",
+      "type": "string"
+    },
+    "EvidenceLevel": {
+      "description": "What kind of evidence a reported result rests on (strongest last).",
+      "enum": [
+        "synthetic_fixture",
+        "automated_only",
+        "human_non_expert",
+        "expert_reviewed"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "PipelineId": {
+      "enum": [
+        "A_direct",
+        "B_two_stage",
+        "C_retrieval",
+        "D_structured"
+      ],
+      "title": "PipelineId",
+      "type": "string"
+    },
+    "TargetLanguage": {
+      "enum": [
+        "fr",
+        "en"
+      ],
+      "title": "TargetLanguage",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "evaluation_id": {
+      "title": "Evaluation Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "result_id": {
+      "title": "Result Id",
+      "type": "string"
+    },
+    "passage_id": {
+      "title": "Passage Id",
+      "type": "string"
+    },
+    "pipeline": {
+      "$ref": "#/$defs/PipelineId"
+    },
+    "category": {
+      "$ref": "#/$defs/CorpusCategory"
+    },
+    "split": {
+      "$ref": "#/$defs/DatasetSplit"
+    },
+    "target_language": {
+      "$ref": "#/$defs/TargetLanguage"
+    },
+    "metrics": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "description": "Automated reference-based scores (e.g. chrF). Not proof of correctness.",
+      "title": "Metrics",
+      "type": "object"
+    },
+    "reference_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reference Ids",
+      "type": "array"
+    },
+    "n_references": {
+      "default": 0,
+      "title": "N References",
+      "type": "integer"
+    },
+    "mqm_penalty": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Mean MQM penalty per normalisation unit across reviewers.",
+      "title": "Mqm Penalty"
+    },
+    "mqm_error_counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Mqm Error Counts",
+      "type": "object"
+    },
+    "human_acceptable": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Human Acceptable"
+    },
+    "review_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Review Ids",
+      "type": "array"
+    },
+    "evidence_level": {
+      "$ref": "#/$defs/EvidenceLevel"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Notes",
+      "type": "array"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evaluation_id",
+    "run_id",
+    "result_id",
+    "passage_id",
+    "pipeline",
+    "category",
+    "split",
+    "target_language",
+    "evidence_level",
+    "created_at"
+  ],
+  "title": "EvaluationResult",
+  "type": "object"
+}

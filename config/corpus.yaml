@@ -1,0 +1,42 @@
+# Corpus composition targets and partitioning policy.
+# These are TARGET sizes for verified passages, not a description of current data.
+targets:
+  full_corpus:
+    french_prose: 30
+    french_poetry: 20
+    latin_prose: 15
+    latin_verse: 5
+    mixed: 10
+  # Initial 20-passage feasibility study (CAL-05 .. CAL-08).
+  pilot:
+    french_prose: 5
+    french_poetry: 5
+    latin: 5
+    mixed_or_difficult: 5
+
+splits:
+  seed: 20261021
+  # Grouping key: no group may span two partitions. "author" is stricter.
+  group_by: work_id
+  # Targets for the full 80-passage corpus; scaled proportionally for other sizes.
+  targets:
+    development: 48
+    validation: 12
+    test: 20
+
+inclusion:
+  # Passages below this status are excluded from calibration runs.
+  minimum_passage_status: transcription_verified
+  minimum_references_per_language: 1
+
+leakage:
+  # Character-shingle Jaccard similarity at or above which passages are near-duplicates.
+  near_duplicate_threshold: 0.8
+  shingle_size: 5
+
+normalisation:
+  # Rules applied when an editor *requests* a normalised reading. The diplomatic
+  # transcription is never altered. See docs/transcription-policy.md.
+  default_rules:
+    - long_s
+    - ligatures_ae_oe

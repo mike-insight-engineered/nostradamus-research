@@ -1,0 +1,451 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/translation_result.schema.json",
+  "$defs": {
+    "AlternativeReading": {
+      "additionalProperties": false,
+      "properties": {
+        "span": {
+          "title": "Span",
+          "type": "string"
+        },
+        "readings": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Readings",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "span",
+        "readings"
+      ],
+      "title": "AlternativeReading",
+      "type": "object"
+    },
+    "ConfidenceSource": {
+      "description": "Where a confidence value came from. It is *never* a calibrated probability.",
+      "enum": [
+        "model_stated",
+        "mock_deterministic",
+        "none"
+      ],
+      "title": "ConfidenceSource",
+      "type": "string"
+    },
+    "DataOrigin": {
+      "enum": [
+        "historical_source",
+        "synthetic_fixture"
+      ],
+      "title": "DataOrigin",
+      "type": "string"
+    },
+    "PipelineId": {
+      "enum": [
+        "A_direct",
+        "B_two_stage",
+        "C_retrieval",
+        "D_structured"
+      ],
+      "title": "PipelineId",
+      "type": "string"
+    },
+    "ProviderCallRecord": {
+      "additionalProperties": false,
+      "description": "Metadata for one provider call. Prompt text is stored only as a hash by default.",
+      "properties": {
+        "call_id": {
+          "title": "Call Id",
+          "type": "string"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "task": {
+          "title": "Task",
+          "type": "string"
+        },
+        "prompt_template_id": {
+          "title": "Prompt Template Id",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "prompt_sha256": {
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "temperature": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Temperature"
+        },
+        "max_tokens": {
+          "title": "Max Tokens",
+          "type": "integer"
+        },
+        "started_at": {
+          "format": "date-time",
+          "title": "Started At",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "title": "Duration Seconds",
+          "type": "number"
+        },
+        "attempts": {
+          "default": 1,
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "usage": {
+          "$ref": "#/$defs/TokenUsage"
+        },
+        "cost_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cost Usd"
+        },
+        "cost_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cost Note"
+        },
+        "response_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Response Id"
+        },
+        "stop_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stop Reason"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "required": [
+        "call_id",
+        "stage",
+        "provider",
+        "model",
+        "task",
+        "prompt_template_id",
+        "prompt_version",
+        "prompt_sha256",
+        "temperature",
+        "max_tokens",
+        "started_at",
+        "duration_seconds"
+      ],
+      "title": "ProviderCallRecord",
+      "type": "object"
+    },
+    "TokenUsage": {
+      "additionalProperties": false,
+      "properties": {
+        "input_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        }
+      },
+      "title": "TokenUsage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "result_id": {
+      "title": "Result Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "passage_id": {
+      "title": "Passage Id",
+      "type": "string"
+    },
+    "pipeline": {
+      "$ref": "#/$defs/PipelineId"
+    },
+    "provider": {
+      "title": "Provider",
+      "type": "string"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "is_mock": {
+      "title": "Is Mock",
+      "type": "boolean"
+    },
+    "data_origin": {
+      "$ref": "#/$defs/DataOrigin"
+    },
+    "source_text_sha256": {
+      "title": "Source Text Sha256",
+      "type": "string"
+    },
+    "translation_fr": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Translation Fr"
+    },
+    "translation_en": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Translation En"
+    },
+    "intermediate_fr": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Pipeline B: the modern French text that was translated to English.",
+      "title": "Intermediate Fr"
+    },
+    "analysis": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Pipeline D: structured linguistic analysis.",
+      "title": "Analysis"
+    },
+    "retrieved_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Retrieved Evidence Ids",
+      "type": "array"
+    },
+    "retrieval_status": {
+      "default": "not_applicable",
+      "enum": [
+        "not_applicable",
+        "verified_evidence",
+        "unverified_or_synthetic_evidence",
+        "no_evidence"
+      ],
+      "title": "Retrieval Status",
+      "type": "string"
+    },
+    "alternatives": {
+      "items": {
+        "$ref": "#/$defs/AlternativeReading"
+      },
+      "title": "Alternatives",
+      "type": "array"
+    },
+    "unresolved_ambiguities": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unresolved Ambiguities",
+      "type": "array"
+    },
+    "stated_confidence": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Model-stated, UNCALIBRATED confidence. Never an empirical probability.",
+      "title": "Stated Confidence"
+    },
+    "confidence_source": {
+      "$ref": "#/$defs/ConfidenceSource",
+      "default": "none"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "guardrail_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Guardrail Flags",
+      "type": "array"
+    },
+    "parse_errors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Parse Errors",
+      "type": "array"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
+    "prompt_versions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Prompt Versions",
+      "type": "object"
+    },
+    "calls": {
+      "items": {
+        "$ref": "#/$defs/ProviderCallRecord"
+      },
+      "title": "Calls",
+      "type": "array"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "result_id",
+    "run_id",
+    "passage_id",
+    "pipeline",
+    "provider",
+    "model",
+    "is_mock",
+    "data_origin",
+    "source_text_sha256",
+    "created_at"
+  ],
+  "title": "TranslationResult",
+  "type": "object"
+}

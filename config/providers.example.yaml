@@ -1,0 +1,53 @@
+# Provider configuration TEMPLATE.
+#
+#   cp config/providers.example.yaml config/providers.yaml   # git-ignored
+#
+# API keys are NEVER written here; each provider names the environment
+# variable that holds its key. Paid providers stay disabled until you set
+# enabled: true in your local copy AND pass --allow-paid-api on the command line.
+#
+# No model is assumed to be available: replace the model IDs with ones your
+# account can access. Pricing is left null (cost reported as unknown) until
+# you enter current published prices for your chosen model.
+providers:
+  mock:
+    type: mock
+    model: mock-deterministic-v1
+    enabled: true
+
+  anthropic:
+    type: anthropic
+    model: REPLACE_WITH_AVAILABLE_MODEL_ID   # e.g. a current Claude model ID
+    api_key_env: ANTHROPIC_API_KEY
+    enabled: false
+    temperature: 0.0          # set to null to omit for models that reject it
+    max_tokens: 2048
+    timeout_seconds: 120
+    max_retries: 4
+    initial_backoff_seconds: 2
+    max_backoff_seconds: 60
+    requests_per_minute: 20
+    pricing:
+      input_usd_per_million_tokens: null
+      output_usd_per_million_tokens: null
+
+  openai:
+    type: openai
+    model: REPLACE_WITH_AVAILABLE_MODEL_ID
+    api_key_env: OPENAI_API_KEY
+    enabled: false
+    temperature: 0.0
+    max_tokens: 2048
+    timeout_seconds: 120
+    max_retries: 4
+    initial_backoff_seconds: 2
+    max_backoff_seconds: 60
+    requests_per_minute: 20
+    pricing:
+      input_usd_per_million_tokens: null
+      output_usd_per_million_tokens: null
+
+logging:
+  # When false (default) only SHA-256 hashes and lengths of prompts/responses are logged.
+  log_prompts: false
+  log_responses: false

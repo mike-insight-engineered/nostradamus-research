@@ -1,0 +1,905 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/passage.schema.json",
+  "$defs": {
+    "AmbiguityAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "span": {
+          "title": "Span",
+          "type": "string"
+        },
+        "readings": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Readings",
+          "type": "array"
+        },
+        "resolution": {
+          "default": "unresolved",
+          "enum": [
+            "unresolved",
+            "resolved"
+          ],
+          "title": "Resolution",
+          "type": "string"
+        },
+        "resolution_basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolution Basis"
+        },
+        "annotator": {
+          "title": "Annotator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "span",
+        "readings",
+        "annotator"
+      ],
+      "title": "AmbiguityAnnotation",
+      "type": "object"
+    },
+    "CorpusCategory": {
+      "enum": [
+        "french_prose",
+        "french_poetry",
+        "latin_prose",
+        "latin_verse",
+        "mixed"
+      ],
+      "title": "CorpusCategory",
+      "type": "string"
+    },
+    "DataOrigin": {
+      "enum": [
+        "historical_source",
+        "synthetic_fixture"
+      ],
+      "title": "DataOrigin",
+      "type": "string"
+    },
+    "DatasetSplit": {
+      "enum": [
+        "unassigned",
+        "development",
+        "validation",
+        "test"
+      ],
+      "title": "DatasetSplit",
+      "type": "string"
+    },
+    "DifficultWord": {
+      "additionalProperties": false,
+      "properties": {
+        "form": {
+          "description": "Exact form as it appears in the diplomatic transcription.",
+          "title": "Form",
+          "type": "string"
+        },
+        "lemma": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lemma"
+        },
+        "candidate_senses": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Senses",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "form"
+      ],
+      "title": "DifficultWord",
+      "type": "object"
+    },
+    "Genre": {
+      "enum": [
+        "prose",
+        "verse"
+      ],
+      "title": "Genre",
+      "type": "string"
+    },
+    "HistoricalAssertion": {
+      "additionalProperties": false,
+      "description": "A checked statement of fact about the text (QC1/QC2), with evidence.",
+      "properties": {
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "evidence": {
+          "description": "Citations or registry/evidence IDs.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "asserted_by": {
+          "title": "Asserted By",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "disputed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "evidence",
+        "asserted_by",
+        "status"
+      ],
+      "title": "HistoricalAssertion",
+      "type": "object"
+    },
+    "Language": {
+      "description": "Source languages (ISO 639-3 where available).",
+      "enum": [
+        "frm",
+        "lat",
+        "oci",
+        "mixed",
+        "other"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "LinguisticAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "span": {
+          "title": "Span",
+          "type": "string"
+        },
+        "annotation_type": {
+          "enum": [
+            "morphology",
+            "syntax",
+            "orthography",
+            "code_switching",
+            "metre",
+            "other"
+          ],
+          "title": "Annotation Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "annotator": {
+          "title": "Annotator",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "span",
+        "annotation_type",
+        "description",
+        "annotator"
+      ],
+      "title": "LinguisticAnnotation",
+      "type": "object"
+    },
+    "PilotGroup": {
+      "enum": [
+        "french_prose",
+        "french_poetry",
+        "latin",
+        "mixed_or_difficult"
+      ],
+      "title": "PilotGroup",
+      "type": "string"
+    },
+    "ProposedInterpretation": {
+      "additionalProperties": false,
+      "description": "A QC3 interpretive proposal. Never treated as established fact.",
+      "properties": {
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "proposed_by": {
+          "title": "Proposed By",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "evidence_strength": {
+          "default": "unassessed",
+          "enum": [
+            "unassessed",
+            "weak",
+            "moderate",
+            "strong"
+          ],
+          "title": "Evidence Strength",
+          "type": "string"
+        },
+        "quality_dimension": {
+          "const": "QC3",
+          "default": "QC3",
+          "title": "Quality Dimension",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "proposed_by",
+        "rationale"
+      ],
+      "title": "ProposedInterpretation",
+      "type": "object"
+    },
+    "ReferenceTranslation": {
+      "additionalProperties": false,
+      "description": "One legitimate reference translation. A passage may have several per language.",
+      "properties": {
+        "reference_id": {
+          "pattern": "^(REF|SYN-REF)-[A-Z0-9][A-Z0-9\\-]*$",
+          "title": "Reference Id",
+          "type": "string"
+        },
+        "passage_id": {
+          "title": "Passage Id",
+          "type": "string"
+        },
+        "target_language": {
+          "$ref": "#/$defs/TargetLanguage"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "data_origin": {
+          "$ref": "#/$defs/DataOrigin",
+          "default": "historical_source"
+        },
+        "translator": {
+          "minLength": 2,
+          "title": "Translator",
+          "type": "string"
+        },
+        "translator_type": {
+          "$ref": "#/$defs/TranslatorType"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        },
+        "source_citation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Published edition / page if taken from a publication.",
+          "title": "Source Citation"
+        },
+        "rights_status": {
+          "$ref": "#/$defs/RightsStatus",
+          "default": "unknown"
+        },
+        "licence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Licence"
+        },
+        "independent_of_evaluated_models": {
+          "description": "False if any evaluated model or pipeline contributed to this text.",
+          "title": "Independent Of Evaluated Models",
+          "type": "boolean"
+        },
+        "is_literal": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "True for a deliberately literal rendering.",
+          "title": "Is Literal"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "reference_id",
+        "passage_id",
+        "target_language",
+        "text",
+        "translator",
+        "translator_type",
+        "independent_of_evaluated_models"
+      ],
+      "title": "ReferenceTranslation",
+      "type": "object"
+    },
+    "ReviewEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "on": {
+          "format": "date",
+          "title": "On",
+          "type": "string"
+        },
+        "by": {
+          "title": "By",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "created",
+            "transcription_checked",
+            "reference_added",
+            "annotated",
+            "status_changed",
+            "split_assigned",
+            "comment"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "from_status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VerificationStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "to_status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VerificationStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "on",
+        "by",
+        "action"
+      ],
+      "title": "ReviewEvent",
+      "type": "object"
+    },
+    "RightsStatus": {
+      "enum": [
+        "unknown",
+        "public_domain",
+        "open_licence",
+        "permission_granted",
+        "restricted",
+        "not_permitted"
+      ],
+      "title": "RightsStatus",
+      "type": "string"
+    },
+    "TargetLanguage": {
+      "enum": [
+        "fr",
+        "en"
+      ],
+      "title": "TargetLanguage",
+      "type": "string"
+    },
+    "TextualVariant": {
+      "additionalProperties": false,
+      "properties": {
+        "witness_id": {
+          "description": "Source ID of the witness carrying this reading.",
+          "title": "Witness Id",
+          "type": "string"
+        },
+        "location": {
+          "description": "Where in the passage the variant occurs.",
+          "title": "Location",
+          "type": "string"
+        },
+        "reading": {
+          "title": "Reading",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "witness_id",
+        "location",
+        "reading"
+      ],
+      "title": "TextualVariant",
+      "type": "object"
+    },
+    "TranslatorType": {
+      "enum": [
+        "human_expert",
+        "published_edition",
+        "human_non_expert",
+        "machine",
+        "synthetic_fixture"
+      ],
+      "title": "TranslatorType",
+      "type": "string"
+    },
+    "VerificationStatus": {
+      "description": "Provenance/verification ladder for sources, passages and lexical evidence.\n\nStatuses are cumulative: each rung requires the evidence of all lower rungs.\nDiscovering a digitised copy (``located``) is *not* authentication of a\nparticular printed witness (``provenance_checked``).",
+      "enum": [
+        "candidate",
+        "located",
+        "provenance_checked",
+        "transcription_verified",
+        "expert_reviewed",
+        "rejected"
+      ],
+      "title": "VerificationStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "passage_id": {
+      "pattern": "^(PSG|SYN-PSG)-[A-Z0-9][A-Z0-9\\-]*$",
+      "title": "Passage Id",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "data_origin": {
+      "$ref": "#/$defs/DataOrigin",
+      "default": "historical_source"
+    },
+    "author_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Author Id"
+    },
+    "author": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Author"
+    },
+    "work_id": {
+      "description": "Grouping key for leakage-safe splitting.",
+      "minLength": 1,
+      "title": "Work Id",
+      "type": "string"
+    },
+    "witness_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Edition/witness identifier.",
+      "title": "Witness Id"
+    },
+    "language": {
+      "$ref": "#/$defs/Language"
+    },
+    "secondary_languages": {
+      "items": {
+        "$ref": "#/$defs/Language"
+      },
+      "title": "Secondary Languages",
+      "type": "array"
+    },
+    "genre": {
+      "$ref": "#/$defs/Genre"
+    },
+    "category": {
+      "$ref": "#/$defs/CorpusCategory"
+    },
+    "pilot_group": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PilotGroup"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Override, e.g. a hard French passage counted as difficult."
+    },
+    "difficulty_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Difficulty Flags",
+      "type": "array"
+    },
+    "date_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Text"
+    },
+    "date_earliest": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Earliest"
+    },
+    "date_latest": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Latest"
+    },
+    "diplomatic_transcription": {
+      "description": "Exact transcription; spelling, punctuation and abbreviations as printed.",
+      "minLength": 1,
+      "title": "Diplomatic Transcription",
+      "type": "string"
+    },
+    "diplomatic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Diplomatic Sha256",
+      "type": "string"
+    },
+    "transcription_format": {
+      "default": "plain",
+      "enum": [
+        "plain",
+        "tei"
+      ],
+      "title": "Transcription Format",
+      "type": "string"
+    },
+    "transcribed_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Transcribed By"
+    },
+    "typography_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Typography Notes"
+    },
+    "spelling_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Spelling Notes"
+    },
+    "normalised_reading": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Editorial normalisation; never replaces the diplomatic text.",
+      "title": "Normalised Reading"
+    },
+    "normalisation_rules": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Normalisation Rules",
+      "type": "array"
+    },
+    "normalised_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Normalised By"
+    },
+    "locator": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Page/folio/signature in the witness.",
+      "title": "Locator"
+    },
+    "facsimile_reference": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Image URL or IIIF reference.",
+      "title": "Facsimile Reference"
+    },
+    "textual_variants": {
+      "items": {
+        "$ref": "#/$defs/TextualVariant"
+      },
+      "title": "Textual Variants",
+      "type": "array"
+    },
+    "difficult_words": {
+      "items": {
+        "$ref": "#/$defs/DifficultWord"
+      },
+      "title": "Difficult Words",
+      "type": "array"
+    },
+    "linguistic_annotations": {
+      "items": {
+        "$ref": "#/$defs/LinguisticAnnotation"
+      },
+      "title": "Linguistic Annotations",
+      "type": "array"
+    },
+    "lexical_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Lexical Evidence Ids",
+      "type": "array"
+    },
+    "reference_translations": {
+      "items": {
+        "$ref": "#/$defs/ReferenceTranslation"
+      },
+      "title": "Reference Translations",
+      "type": "array"
+    },
+    "ambiguities": {
+      "items": {
+        "$ref": "#/$defs/AmbiguityAnnotation"
+      },
+      "title": "Ambiguities",
+      "type": "array"
+    },
+    "historical_assertions": {
+      "items": {
+        "$ref": "#/$defs/HistoricalAssertion"
+      },
+      "title": "Historical Assertions",
+      "type": "array"
+    },
+    "proposed_interpretations": {
+      "items": {
+        "$ref": "#/$defs/ProposedInterpretation"
+      },
+      "title": "Proposed Interpretations",
+      "type": "array"
+    },
+    "verification_status": {
+      "$ref": "#/$defs/VerificationStatus",
+      "default": "candidate"
+    },
+    "split": {
+      "$ref": "#/$defs/DatasetSplit",
+      "default": "unassigned"
+    },
+    "review_history": {
+      "items": {
+        "$ref": "#/$defs/ReviewEvent"
+      },
+      "title": "Review History",
+      "type": "array"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "passage_id",
+    "source_id",
+    "work_id",
+    "language",
+    "genre",
+    "category",
+    "diplomatic_transcription",
+    "diplomatic_sha256"
+  ],
+  "title": "Passage",
+  "type": "object"
+}

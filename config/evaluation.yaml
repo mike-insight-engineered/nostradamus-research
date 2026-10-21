@@ -1,0 +1,46 @@
+# Evaluation, review and calibration configuration.
+mqm:
+  # Penalty weights per severity (MQM-style). Neutral annotations carry no penalty.
+  severity_weights:
+    neutral: 0
+    minor: 1
+    major: 5
+    critical: 25
+  # Penalties are normalised per this many source words.
+  per_source_words: 100
+
+metrics:
+  chrf: {char_order: 6, word_order: 0, beta: 2}
+  chrf_plus_plus: true
+  # Sentence-level BLEU is unreliable for short passages; off by default.
+  sentence_bleu: false
+  # Requires the optional 'comet' extra (PyTorch). Never used in CI.
+  comet: {enabled: false, model: Unbabel/wmt22-comet-da}
+
+statistics:
+  bootstrap_resamples: 2000
+  confidence_level: 0.95
+  # Below this many observations no bootstrap interval is reported.
+  min_n_for_bootstrap: 5
+  seed: 12345
+
+# How a human review becomes a binary correctness label for calibration.
+correctness:
+  target: both               # fr | en | both
+  # An output is incorrect if any reviewer records an error at/above this severity.
+  unacceptable_at_or_above: major
+  exclude_unresolvable: true
+  aggregation: all_reviewers  # all_reviewers | majority
+
+calibration:
+  n_bins: 5
+  binning: uniform
+  # Reports refuse to describe calibration as established below this sample size.
+  min_items_for_calibration_claims: 50
+
+review:
+  blinding_seed: 777
+  min_reviewers_per_item: 2
+
+agreement:
+  min_items_for_estimate: 10

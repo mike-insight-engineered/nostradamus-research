@@ -218,3 +218,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# nostradamus-research project-specific rules
+# ---------------------------------------------------------------------------
+# Local provider configuration may name enabled paid providers; never commit it.
+config/providers.yaml
+# Offline demonstration output (regenerate with `nr demo`).
+experiments/runs/demo/
+# Scratch / unreviewed run output. Commit real runs deliberately with `git add -f`
+# once their manifests have been reviewed (see experiments/README.md).
+experiments/runs/scratch-*/
+# Unblinding keys must never be shared with reviewers or committed with packages.
+data/annotations/review_packages/*-KEY/
+# Raw scans and copyrighted material stay local unless rights are confirmed.
+data/raw/**
+!data/raw/README.md
+!data/raw/.gitkeep
+# Provider SDK / model caches
+.cache/
+*.ckpt
+# Rights-pending research material (transcriptions from facsimiles with unconfirmed reuse terms,
+# review packets that contain them). See DATA_LICENSE.md §3. Never commit without authorisation.
+*.pending-rights*
+**/pending-rights/
