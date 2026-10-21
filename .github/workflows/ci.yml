@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: lint, types, tests, validation (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.13"]
+    env:
+      # Belt and braces: CI never has provider credentials and never makes paid calls.
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install (locked; provider SDKs included, COMET excluded)
+        run: uv sync --locked --extra providers --python ${{ matrix.python }}
+
+      - name: Ruff lint
+        run: uv run ruff check .
+
+      - name: Ruff format check
+        run: uv run ruff format --check .
+
+      - name: Mypy
+        run: uv run mypy
+
+      - name: Schemas up to date
+        run: uv run python scripts/generate_schemas.py --check
+
+      - name: Tests (offline)
+        run: uv run pytest
+
+      - name: Repository validation (structure, integrity, secret scan)
+        run: uv run python scripts/validate_repository.py
+
+      - name: Offline demonstration (synthetic, mock provider)
+        run: uv run nr demo --output-dir "${{ runner.temp }}/demo"
+
+      - name: Milestone readiness report (not committed)
+        run: uv run nr report milestone --output "${{ runner.temp }}/milestone.md"

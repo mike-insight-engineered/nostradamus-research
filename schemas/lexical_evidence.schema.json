@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/lexical_evidence.schema.json",
+  "$defs": {
+    "DataOrigin": {
+      "enum": [
+        "historical_source",
+        "synthetic_fixture"
+      ],
+      "title": "DataOrigin",
+      "type": "string"
+    },
+    "EvidenceKind": {
+      "enum": [
+        "dictionary_entry",
+        "period_usage",
+        "grammar_reference",
+        "literary_example"
+      ],
+      "title": "EvidenceKind",
+      "type": "string"
+    },
+    "Language": {
+      "description": "Source languages (ISO 639-3 where available).",
+      "enum": [
+        "frm",
+        "lat",
+        "oci",
+        "mixed",
+        "other"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "RightsStatus": {
+      "enum": [
+        "unknown",
+        "public_domain",
+        "open_licence",
+        "permission_granted",
+        "restricted",
+        "not_permitted"
+      ],
+      "title": "RightsStatus",
+      "type": "string"
+    },
+    "VerificationStatus": {
+      "description": "Provenance/verification ladder for sources, passages and lexical evidence.\n\nStatuses are cumulative: each rung requires the evidence of all lower rungs.\nDiscovering a digitised copy (``located``) is *not* authentication of a\nparticular printed witness (``provenance_checked``).",
+      "enum": [
+        "candidate",
+        "located",
+        "provenance_checked",
+        "transcription_verified",
+        "expert_reviewed",
+        "rejected"
+      ],
+      "title": "VerificationStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "evidence_id": {
+      "pattern": "^(LEX|SYN-LEX)-[A-Z0-9][A-Z0-9\\-]*$",
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "data_origin": {
+      "$ref": "#/$defs/DataOrigin",
+      "default": "historical_source"
+    },
+    "kind": {
+      "$ref": "#/$defs/EvidenceKind"
+    },
+    "headword": {
+      "minLength": 1,
+      "title": "Headword",
+      "type": "string"
+    },
+    "variant_forms": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Variant Forms",
+      "type": "array"
+    },
+    "language": {
+      "$ref": "#/$defs/Language"
+    },
+    "sense": {
+      "description": "Gloss/sense as given by the cited source.",
+      "minLength": 1,
+      "title": "Sense",
+      "type": "string"
+    },
+    "citation": {
+      "description": "Full bibliographic citation of the source.",
+      "minLength": 5,
+      "title": "Citation",
+      "type": "string"
+    },
+    "source_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Registry ID of the cited resource.",
+      "title": "Source Id"
+    },
+    "locator": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Locator"
+    },
+    "quotation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Exact quotation, if rights permit.",
+      "title": "Quotation"
+    },
+    "url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Url"
+    },
+    "rights_status": {
+      "$ref": "#/$defs/RightsStatus",
+      "default": "unknown"
+    },
+    "verification_status": {
+      "$ref": "#/$defs/VerificationStatus",
+      "default": "candidate"
+    },
+    "verified_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Verified By"
+    },
+    "verified_on": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Verified On"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "kind",
+    "headword",
+    "language",
+    "sense",
+    "citation"
+  ],
+  "title": "LexicalEvidence",
+  "type": "object"
+}

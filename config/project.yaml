@@ -1,0 +1,30 @@
+# Project-level configuration. All paths are relative to the repository root.
+project:
+  name: nostradamus-research
+  title: Nostradamus Historical Translation Calibration
+  milestone: M1
+  milestone_title: Historical Translation Calibration Pilot
+  quality_dimensions:
+    QC1: Fidelity of transcription to historical source witnesses
+    QC2: Fidelity of translation to the historical language
+    QC3: Evidential strength of later interpretations (architecture only in M1)
+
+paths:
+  source_registry: data/sources/source_registry.jsonl
+  source_candidates: data/sources/source_candidates.csv
+  passages: data/processed/passages.jsonl
+  lexical_evidence: data/annotations/lexical_evidence.jsonl
+  splits_dir: data/splits
+  runs_dir: experiments/runs
+  reports_dir: reports
+  report_templates_dir: reports/templates
+  schemas_dir: schemas
+  fixtures_dir: data/fixtures
+  backlog: docs/project/backlog.yaml
+  test_access_ledger: experiments/runs/test_access_ledger.jsonl
+
+integrity:
+  # Synthetic fixtures (SYN- IDs) may never enter the research corpus files.
+  forbid_synthetic_in_corpus: true
+  # Every passage must carry the SHA-256 of its diplomatic transcription.
+  require_diplomatic_hash: true

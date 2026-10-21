@@ -1,0 +1,39 @@
+# Translation pipeline configuration.
+default_provider: mock
+
+# Prompt templates are versioned files in src/nostradamus_research/translation/prompt_templates/.
+# A run fails if the template on disk does not carry the version pinned here.
+prompt_versions:
+  direct: "1.0.0"
+  two_stage_to_french: "1.0.0"
+  two_stage_french_to_english: "1.0.0"
+  retrieval_augmented: "1.0.0"
+  structured_analysis: "1.0.0"
+
+generation:
+  temperature: 0.0
+  max_tokens: 2048
+
+pipelines:
+  A_direct: {enabled: true}
+  B_two_stage: {enabled: true}
+  C_retrieval: {enabled: true, top_k: 5}
+  D_structured: {enabled: true, top_k: 5}
+
+# Pipelines always translate the diplomatic transcription. When true, an existing
+# editorial normalised reading is shown alongside it, clearly labelled.
+include_normalised_reading: false
+
+retrieval:
+  # Only evidence at or above this status counts as verified evidence.
+  minimum_evidence_status: transcription_verified
+  # Synthetic evidence is only for software tests and labelled demonstrations.
+  allow_synthetic_evidence: false
+  top_k: 5
+
+# Flag (never silently strip) outputs that drift into prophetic interpretation.
+flag_speculative_interpretation: true
+
+# Translating held-out (test) passages requires --allow-test-split and a reason,
+# and every access is appended to the test access ledger.
+held_out_requires_explicit_flag: true

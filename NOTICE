@@ -1,0 +1,25 @@
+nostradamus-research
+Copyright (C) 2026 Michael Minto and contributors
+
+SOFTWARE
+--------
+The original software in this repository (src/, scripts/, tests/, configuration, CI and build files)
+is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version (SPDX: GPL-3.0-or-later). The full licence text is in LICENSE.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See LICENSE for details.
+
+No third-party source code is vendored in this repository. Runtime and development dependencies are
+installed separately (see pyproject.toml / uv.lock) and remain under their own licences, all of which
+are compatible with GPL-3.0-or-later as checked on 2026-10-21 from installed package metadata:
+
+  MIT          pydantic, typer, rich, PyYAML, jsonschema, anthropic, pytest, ruff, mypy
+  BSD-3-Clause pandas, numpy, scipy, scikit-learn
+  Apache-2.0   sacrebleu, openai, unbabel-comet (optional extra; not installed by default)
+
+RESEARCH DATA AND DOCUMENTATION
+-------------------------------
+The software licence does NOT apply to research data, third-party historical material, transcriptions,
+facsimiles, metadata or translations. See DATA_LICENSE.md.

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/reference_translation.schema.json",
+  "$defs": {
+    "DataOrigin": {
+      "enum": [
+        "historical_source",
+        "synthetic_fixture"
+      ],
+      "title": "DataOrigin",
+      "type": "string"
+    },
+    "RightsStatus": {
+      "enum": [
+        "unknown",
+        "public_domain",
+        "open_licence",
+        "permission_granted",
+        "restricted",
+        "not_permitted"
+      ],
+      "title": "RightsStatus",
+      "type": "string"
+    },
+    "TargetLanguage": {
+      "enum": [
+        "fr",
+        "en"
+      ],
+      "title": "TargetLanguage",
+      "type": "string"
+    },
+    "TranslatorType": {
+      "enum": [
+        "human_expert",
+        "published_edition",
+        "human_non_expert",
+        "machine",
+        "synthetic_fixture"
+      ],
+      "title": "TranslatorType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One legitimate reference translation. A passage may have several per language.",
+  "properties": {
+    "reference_id": {
+      "pattern": "^(REF|SYN-REF)-[A-Z0-9][A-Z0-9\\-]*$",
+      "title": "Reference Id",
+      "type": "string"
+    },
+    "passage_id": {
+      "title": "Passage Id",
+      "type": "string"
+    },
+    "target_language": {
+      "$ref": "#/$defs/TargetLanguage"
+    },
+    "text": {
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    },
+    "data_origin": {
+      "$ref": "#/$defs/DataOrigin",
+      "default": "historical_source"
+    },
+    "translator": {
+      "minLength": 2,
+      "title": "Translator",
+      "type": "string"
+    },
+    "translator_type": {
+      "$ref": "#/$defs/TranslatorType"
+    },
+    "reviewer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer"
+    },
+    "source_citation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Published edition / page if taken from a publication.",
+      "title": "Source Citation"
+    },
+    "rights_status": {
+      "$ref": "#/$defs/RightsStatus",
+      "default": "unknown"
+    },
+    "licence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Licence"
+    },
+    "independent_of_evaluated_models": {
+      "description": "False if any evaluated model or pipeline contributed to this text.",
+      "title": "Independent Of Evaluated Models",
+      "type": "boolean"
+    },
+    "is_literal": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "True for a deliberately literal rendering.",
+      "title": "Is Literal"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "reference_id",
+    "passage_id",
+    "target_language",
+    "text",
+    "translator",
+    "translator_type",
+    "independent_of_evaluated_models"
+  ],
+  "title": "ReferenceTranslation",
+  "type": "object"
+}

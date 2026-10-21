@@ -1,0 +1,492 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/historical_source.schema.json",
+  "$defs": {
+    "DataOrigin": {
+      "enum": [
+        "historical_source",
+        "synthetic_fixture"
+      ],
+      "title": "DataOrigin",
+      "type": "string"
+    },
+    "EvidenceType": {
+      "enum": [
+        "catalogue_record",
+        "digital_facsimile",
+        "transcription_check",
+        "expert_review",
+        "rights_check",
+        "other"
+      ],
+      "title": "EvidenceType",
+      "type": "string"
+    },
+    "Genre": {
+      "enum": [
+        "prose",
+        "verse"
+      ],
+      "title": "Genre",
+      "type": "string"
+    },
+    "Language": {
+      "description": "Source languages (ISO 639-3 where available).",
+      "enum": [
+        "frm",
+        "lat",
+        "oci",
+        "mixed",
+        "other"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "RecordType": {
+      "enum": [
+        "witness",
+        "digital_repository",
+        "reference_work",
+        "text_corpus"
+      ],
+      "title": "RecordType",
+      "type": "string"
+    },
+    "RightsStatus": {
+      "enum": [
+        "unknown",
+        "public_domain",
+        "open_licence",
+        "permission_granted",
+        "restricted",
+        "not_permitted"
+      ],
+      "title": "RightsStatus",
+      "type": "string"
+    },
+    "StatusChange": {
+      "additionalProperties": false,
+      "properties": {
+        "from_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "to_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "changed_by": {
+          "minLength": 2,
+          "title": "Changed By",
+          "type": "string"
+        },
+        "changed_on": {
+          "format": "date",
+          "title": "Changed On",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 5,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from_status",
+        "to_status",
+        "changed_by",
+        "changed_on",
+        "reason"
+      ],
+      "title": "StatusChange",
+      "type": "object"
+    },
+    "VerificationEvidence": {
+      "additionalProperties": false,
+      "description": "One documented act of verification. Must name a real person or role.",
+      "properties": {
+        "evidence_type": {
+          "$ref": "#/$defs/EvidenceType"
+        },
+        "supports_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "description": {
+          "description": "What was checked and how.",
+          "minLength": 10,
+          "title": "Description",
+          "type": "string"
+        },
+        "verified_by": {
+          "minLength": 2,
+          "title": "Verified By",
+          "type": "string"
+        },
+        "verified_on": {
+          "format": "date",
+          "title": "Verified On",
+          "type": "string"
+        },
+        "reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL, catalogue number, image/page reference.",
+          "title": "Reference"
+        }
+      },
+      "required": [
+        "evidence_type",
+        "supports_status",
+        "description",
+        "verified_by",
+        "verified_on"
+      ],
+      "title": "VerificationEvidence",
+      "type": "object"
+    },
+    "VerificationStatus": {
+      "description": "Provenance/verification ladder for sources, passages and lexical evidence.\n\nStatuses are cumulative: each rung requires the evidence of all lower rungs.\nDiscovering a digitised copy (``located``) is *not* authentication of a\nparticular printed witness (``provenance_checked``).",
+      "enum": [
+        "candidate",
+        "located",
+        "provenance_checked",
+        "transcription_verified",
+        "expert_reviewed",
+        "rejected"
+      ],
+      "title": "VerificationStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A registered source. ``SRC-`` witnesses, ``RES-`` resources, ``SYN-`` fixtures.",
+  "properties": {
+    "source_id": {
+      "pattern": "^(SRC|RES|SYN)-[A-Z0-9][A-Z0-9\\-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "record_type": {
+      "$ref": "#/$defs/RecordType"
+    },
+    "data_origin": {
+      "$ref": "#/$defs/DataOrigin",
+      "default": "historical_source"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "author": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Author"
+    },
+    "work_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Work Id"
+    },
+    "date_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "As stated, e.g. '1532' or 'c. 1550'.",
+      "title": "Date Text"
+    },
+    "date_earliest": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Earliest"
+    },
+    "date_latest": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Latest"
+    },
+    "languages": {
+      "items": {
+        "$ref": "#/$defs/Language"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "genres": {
+      "items": {
+        "$ref": "#/$defs/Genre"
+      },
+      "title": "Genres",
+      "type": "array"
+    },
+    "edition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Edition"
+    },
+    "printer_publisher": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Printer Publisher"
+    },
+    "place_of_publication": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Place Of Publication"
+    },
+    "holding_institution": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Holding Institution"
+    },
+    "catalogue_identifier": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Catalogue Identifier"
+    },
+    "stable_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stable Url"
+    },
+    "persistent_identifier": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Persistent Identifier"
+    },
+    "locator": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Exact page, folio or image reference.",
+      "title": "Locator"
+    },
+    "scan_available": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scan Available"
+    },
+    "transcription_available": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Transcription Available"
+    },
+    "rights_status": {
+      "$ref": "#/$defs/RightsStatus",
+      "default": "unknown"
+    },
+    "licence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Licence"
+    },
+    "rights_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rights Notes"
+    },
+    "verification_status": {
+      "$ref": "#/$defs/VerificationStatus",
+      "default": "candidate"
+    },
+    "verification_evidence": {
+      "items": {
+        "$ref": "#/$defs/VerificationEvidence"
+      },
+      "title": "Verification Evidence",
+      "type": "array"
+    },
+    "status_history": {
+      "items": {
+        "$ref": "#/$defs/StatusChange"
+      },
+      "title": "Status History",
+      "type": "array"
+    },
+    "date_accessed": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date Accessed"
+    },
+    "authenticity_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Authenticity Notes"
+    },
+    "uncertainty_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty Notes"
+    },
+    "outstanding_work": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Outstanding Work",
+      "type": "array"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "source_id",
+    "record_type",
+    "title"
+  ],
+  "title": "HistoricalSource",
+  "type": "object"
+}

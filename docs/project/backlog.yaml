@@ -1,0 +1,178 @@
+# Machine-readable Milestone 1 backlog. Validated by tests and cross-checked by
+# `nr report milestone`. Human-readable view: docs/project/backlog.md.
+#
+# Status vocabulary: Not started | In progress | Blocked | Ready for review | Complete
+# software_status and research_status are tracked separately; "n/a" where a
+# workstream does not apply. An item is Complete only when every applicable
+# workstream is Complete AND evidence is cited. A template or empty directory
+# is never evidence of completion.
+milestone: M1
+updated: "2026-10-21 (Phase 2 remediation)"
+items:
+  - id: CAL-01
+    title: Create repository research protocol and project configuration
+    workstream: both
+    status: Ready for review
+    software_status: Ready for review
+    research_status: Ready for review
+    deliverables: [config/*.yaml, docs/project-charter.md, docs/research-methodology.md, CLAUDE.md]
+    evidence: ["tests/unit/test_config.py passes", "nr config validate"]
+    notes: Protocol drafted by the implementation; requires review and sign-off by the project lead.
+
+  - id: CAL-02
+    title: Establish historical source and licensing registers
+    workstream: both
+    status: In progress
+    software_status: Ready for review
+    research_status: In progress
+    depends_on: [CAL-01]
+    deliverables: [data/sources/source_registry.jsonl, data/sources/source_candidates.csv, docs/source-authentication.md]
+    evidence:
+      - "Remediation: 50 records — 26 located, 24 candidate, 0 provenance_checked"
+      - "research/pilot/rights-provenance-matrix.md (determinations with URL, evidence type, date)"
+      - "research/pilot/source-licence-audit.md (layered rights per platform and witness)"
+      - "research/pilot/evidence/ (BnF catalogue matches, e-rara records, BVH rights excerpts)"
+    notes: >-
+      Witnesses matched to BnF catalogue records via Gallica links, or to e-rara records with VD16
+      references. No catalogue_record evidence has been entered by a named person, so no witness is
+      provenance_checked. Open: current Gallica terms (page not readable), BVH licence conflict,
+      USTC numbers, digitised-copy identification (research/pilot/provenance-issues.md). Remediation READ BnF
+      metadata licence (Licence Ouverte) and e-rara terms; the Gallica CGU is still unread (HTTP 403).
+
+  - id: CAL-03
+    title: Define sampling and dataset partition methodology
+    workstream: both
+    status: Ready for review
+    software_status: Ready for review
+    research_status: Ready for review
+    depends_on: [CAL-01]
+    deliverables: [docs/calibration-methodology.md, config/corpus.yaml, src/nostradamus_research/corpus/splitting.py, src/nostradamus_research/corpus/leakage.py]
+    evidence: ["tests/unit/test_splitting.py and test_leakage.py pass"]
+
+  - id: CAL-04
+    title: Establish translation review and evaluation rubric
+    workstream: both
+    status: Ready for review
+    software_status: Ready for review
+    research_status: Ready for review
+    depends_on: [CAL-01]
+    deliverables: [docs/evaluation-framework.md, docs/human-review-guidelines.md, reports/templates/human-review.md, config/evaluation.yaml]
+    evidence: ["tests/unit/test_mqm.py and test_review_package.py pass"]
+    notes: The rubric should be piloted by at least two qualified reviewers before CAL-10.
+
+  - id: CAL-05
+    title: Acquire five verified French prose passages
+    workstream: research
+    status: In progress
+    software_status: n/a
+    research_status: In progress
+    depends_on: [CAL-02]
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (FP-01..FP-05)"
+      - "data/transcriptions/drafts/pilot_draft_passages.jsonl (PSG-FP-0001)"
+    notes: >-
+      Slots FP-01..FP-05 identified (du Bellay Deffence 1549; Heptaméron 1559; Crenne Songe 1541; Aneau Alector 1560; Dentière Epistre 1539). One AI-assisted UNVERIFIED draft (PSG-FP-0001). 0 verified passages.
+
+  - id: CAL-06
+    title: Acquire five verified French poetry passages
+    workstream: research
+    status: In progress
+    software_status: n/a
+    research_status: In progress
+    depends_on: [CAL-02]
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (FV-01..FV-05)"
+      - "PSG-FV-0001 draft"
+    notes: >-
+      Slots FV-01..FV-05 identified (Pernette du Guillet 1545; du Bellay Olive 1549; Ronsard Continuation 1555; Marot Oeuvres 1547; Marguerites 1547). One UNVERIFIED draft (PSG-FV-0001). Louise Labé 1555 not yet located. 0 verified passages.
+
+  - id: CAL-07
+    title: Acquire five verified Renaissance Latin passages
+    workstream: research
+    status: In progress
+    software_status: n/a
+    research_status: In progress
+    depends_on: [CAL-02]
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (LA-01..LA-05)"
+      - "PSG-LP-0001 draft"
+    notes: >-
+      Remediation: LA-05 replacement proposed (Atrocianus 1528). Slots LA-01..LA-05 identified (Erasmus Moriae Strasbourg 1512; Colloquia Basel 1520 and Zürich c.1540 — same work; Bèze Poemata 1548; Valla Basel 1526). One UNVERIFIED draft (PSG-LP-0001). 0 verified passages.
+
+  - id: CAL-08
+    title: Acquire five verified multilingual or difficult passages
+    workstream: research
+    status: In progress
+    software_status: n/a
+    research_status: In progress
+    depends_on: [CAL-02]
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (MX-01..MX-05)"
+      - "PSG-MX-0001 draft"
+    notes: >-
+      Remediation: MX-05 replacement proposed (Hypnérotomachie 1546); MX-01 image loss traced to binding; MX-02 image unusable (compression). Slots MX-01..MX-05 identified (Rabelais Pantagruel [1532] Limousin; Gargantua 1535 Janotus; Peletier 1550; Moriae Greek proverb; Meigret 1550 — blocked, second-generation witness). One UNVERIFIED draft (PSG-MX-0001). Occitan-influenced texts not yet identified. 0 verified passages.
+
+  - id: CAL-09
+    title: Obtain independent reference translations
+    workstream: research
+    status: In progress
+    software_status: n/a
+    research_status: In progress
+    depends_on: [CAL-05, CAL-06, CAL-07, CAL-08]
+    evidence:
+      - "research/pilot/reference-translation-matrix.md"
+      - "research/pilot/reference-translation-queue.md (brief)"
+    notes: >-
+      Remediation: three published translations CONFIRMED to exist (Finch 2010; Helgerson 2006; Miller 1979), none licensed, base texts not yet confirmed; assignments for the four Target-1 passages prepared. Nothing obtained or licensed. Edition-mismatch caveat recorded. Translator brief prepared. References must be independent and rights-cleared.
+
+  - id: CAL-10
+    title: Complete review of the initial 20-passage feasibility dataset
+    workstream: research
+    status: Not started
+    software_status: n/a
+    research_status: Not started
+    depends_on: [CAL-09]
+    notes: >-
+      Not started. Materials ready: full review packets for the four drafts (research/pilot/review-packets/),
+      per-slot sheets, docs/transcription-verification-protocol.md. Target 1 = FV-01, LA-01, FP-01, MX-01.
+
+  - id: CAL-11
+    title: Expand the corpus to 80 verified passages
+    workstream: research
+    status: Not started
+    software_status: n/a
+    research_status: Not started
+    depends_on: [CAL-10]
+    notes: Only after the feasibility gate.
+
+  - id: CAL-12
+    title: Benchmark four translation pipelines
+    workstream: both
+    status: Blocked
+    software_status: Ready for review
+    research_status: Blocked
+    depends_on: [CAL-10]
+    blockers:
+      - No verified passages or independent references exist (CAL-05 to CAL-10).
+      - Paid API use has not been authorised; no provider/model has been selected.
+    evidence: ["Pipelines A–D run end-to-end with the mock provider (nr demo)"]
+
+  - id: CAL-13
+    title: Conduct independent error analysis and confidence calibration
+    workstream: both
+    status: Blocked
+    software_status: Ready for review
+    research_status: Blocked
+    depends_on: [CAL-12]
+    blockers: [Requires CAL-12 outputs and blinded expert reviews.]
+    evidence: ["tests/unit/test_calibration.py passes; demo produces a calibration report on synthetic data"]
+
+  - id: CAL-14
+    title: Produce the milestone completion report and go/no-go decision
+    workstream: both
+    status: Blocked
+    software_status: Ready for review
+    research_status: Blocked
+    depends_on: [CAL-13]
+    blockers: [Requires CAL-13; the go/no-go decision is made by the project lead, not by software.]
+    evidence: ["nr report milestone produces reports/milestone-1-readiness.md"]

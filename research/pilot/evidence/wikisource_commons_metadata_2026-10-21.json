@@ -1,0 +1,324 @@
+{
+ "Livre:Marguerite de Navarre - L'heptaméron des nouvelles, 1559.pdf": {
+  "Titre": "[[L’Heptaméron des nouvelles (1559)",
+  "Auteur": "[[Auteur:Marguerite de Navarre",
+  "Editeur": "Vincent Sertenas",
+  "Lieu": "Paris",
+  "Annee": "1559",
+  "Bibliotheque": "{{Gallica",
+  "BNF_ARK": "",
+  "Source": "pdf",
+  "Avancement": "T",
+  "quality": {
+   "4": 434,
+   "0": 15
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID btv1b86171930",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Marguerite_de_Navarre_-_L%27heptam%C3%A9ron_des_nouvelles%2C_1559.pdf"
+ },
+ "Livre:Crenne - Songe (1541).djvu": {
+  "Titre": "[[Le Songe de madame Hélisenne]]",
+  "Auteur": "[[Auteur:Hélisenne de Crenne",
+  "Editeur": "Denis Janot",
+  "Lieu": "Paris",
+  "Annee": "1541",
+  "Bibliotheque": "",
+  "BNF_ARK": "btv1b8608308c",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "0": 1,
+   "3": 157,
+   "4": 2
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID btv1b8608308c",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Crenne_-_Songe_%281541%29.djvu"
+ },
+ "Livre:Ronsard - Les Amours, 1553.djvu": {
+  "Titre": "[[Les Amours (1553)",
+  "Auteur": "[[Auteur:Pierre de Ronsard",
+  "Editeur": "chez la veuve Maurice de la Porte",
+  "Lieu": "",
+  "Annee": "1553",
+  "Bibliotheque": "{{IA",
+  "BNF_ARK": "bpt6k700023",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "0": 62,
+   "3": 29,
+   "4": 2,
+   "1": 312
+  },
+  "commons_credit": "Internet Archive identifier: bub_gb_kfK3I2KHZ6QC  \n\nInternet Archive source: https://books.google.com/books?id=kfK3I2KHZ6QC&amp;hl=&amp;source=gbs_api",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Ronsard_-_Les_Amours%2C_1553.djvu"
+ },
+ "Livre:Ronsard - Continuation des Amours, 1555.pdf": {
+  "Titre": "[[Continuation des Amours (1555)",
+  "Auteur": "[[Auteur:Pierre de Ronsard",
+  "Editeur": "Vincent Certenas",
+  "Lieu": "Paris",
+  "Annee": "1555",
+  "Bibliotheque": "",
+  "BNF_ARK": "bpt6k70074z",
+  "Source": "pdf",
+  "Avancement": "C",
+  "quality": {
+   "3": 18,
+   "0": 1,
+   "1": 25
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID bpt6k70074z",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Ronsard_-_Continuation_des_Amours%2C_1555.pdf"
+ },
+ "Livre:Du Bellay - L'Olive et quelques autres oeuvres poeticques, 1549.djvu": {
+  "Titre": "L’Olive et quelques autres oeuvres poeticques",
+  "Auteur": "[[Auteur:Joachim du Bellay",
+  "Editeur": "Arnoul L'Angelier",
+  "Lieu": "Paris",
+  "Annee": "1549",
+  "Bibliotheque": "",
+  "BNF_ARK": "btv1b86095195",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "3": 3,
+   "1": 35
+  },
+  "commons_credit": "Gallica",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Du_Bellay_-_L%27Olive_et_quelques_autres_oeuvres_poeticques%2C_1549.djvu"
+ },
+ "Livre:Pernette du Guillet - Rymes, Tournes, 1545.djvu": {
+  "Titre": "[[Rymes]]",
+  "Auteur": "[[Auteur:Pernette du Guillet",
+  "Editeur": "Tournes",
+  "Lieu": "Lyon",
+  "Annee": "1545",
+  "Bibliotheque": "",
+  "BNF_ARK": "btv1b8609525w",
+  "Source": "djvu",
+  "Avancement": "V",
+  "quality": {
+   "0": 19,
+   "3": 80
+  },
+  "commons_credit": "Bibliothèque nationale de France",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Pernette_du_Guillet_-_Rymes%2C_Tournes%2C_1545.djvu"
+ },
+ "Livre:Marot - Les œuvres de Clément Marot, de Cahors, valet de chambre du roy, 1547.djvu": {
+  "Titre": "Les œuvres de Clément Marot",
+  "Auteur": "[[Auteur:Clément Marot",
+  "Editeur": "G. Roville",
+  "Lieu": "Lyon",
+  "Annee": "1547",
+  "Bibliotheque": "",
+  "BNF_ARK": "bpt6k109342q",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "1": 157
+  },
+  "commons_credit": "Gallica",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Marot_-_Les_%C5%93uvres_de_Cl%C3%A9ment_Marot%2C_de_Cahors%2C_valet_de_chambre_du_roy%2C_1547.djvu"
+ },
+ "Livre:Marguerite de Navarre - Marguerites de la Marguerite des princesses, tres illustre royne de Navarre, tome 1 (1547).pdf": {
+  "Titre": "[[Marguerites de la Marguerite des princesses]]",
+  "Auteur": "",
+  "Editeur": "",
+  "Lieu": "",
+  "Annee": "",
+  "Bibliotheque": "{{Gallica",
+  "BNF_ARK": "",
+  "Source": "pdf",
+  "Avancement": "C",
+  "quality": {
+   "4": 34,
+   "3": 11,
+   "1": 57
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID btv1b8609559p",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Marguerite_de_Navarre_-_Marguerites_de_la_Marguerite_des_princesses%2C_tres_illustre_royne_de_Navarre%2C_tome_1_%281547%29.pdf"
+ },
+ "Livre:Peletier - Les Œuvres poétiques, 1547.djvu": {
+  "Titre": "Les Œuvres poétiques de Jacques Peletier du Mans",
+  "Auteur": "[[Auteur:Jacques Pelletier du Mans]]",
+  "Editeur": "",
+  "Lieu": "Paris",
+  "Annee": "1547",
+  "Bibliotheque": "",
+  "BNF_ARK": "bpt6k54497891",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "1": 7,
+   "0": 4
+  },
+  "commons_credit": "http://gallica.bnf.fr/ark:/12148/bpt6k54497891",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Peletier_-_Les_%C5%92uvres_po%C3%A9tiques%2C_1547.djvu"
+ },
+ "Livre:Peletier - Dialogue de l'ortografe e prononciation françoese.djvu": {
+  "Titre": "[[Dialogue de l'ortografe e prononciation françoese",
+  "Auteur": "[[Auteur:Jacques Pelletier du Mans",
+  "Editeur": "",
+  "Lieu": "",
+  "Annee": "",
+  "Bibliotheque": "{{IA",
+  "BNF_ARK": "",
+  "Source": "djvu",
+  "Avancement": "V",
+  "quality": {
+   "0": 8,
+   "3": 228,
+   "4": 4
+  },
+  "commons_credit": "Internet Archive identifier: fre_b1888226",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Peletier_-_Dialogue_de_l%27ortografe_e_prononciation_fran%C3%A7oese.djvu"
+ },
+ "Livre:Défenses de Louis Meigret touchant son orthographe francoeze ... (microforme) (IA fre b2063628).pdf": {
+  "Titre": "Défenſes de Louis Meigrȩt touçhant ſon Orthographíe Françoȩze",
+  "Auteur": "[[Auteur:Louis Meigret",
+  "Editeur": "Chrétien Wechel",
+  "Lieu": "Paris",
+  "Annee": "1550",
+  "Bibliotheque": "",
+  "BNF_ARK": "",
+  "Source": "pdf",
+  "Avancement": "C",
+  "quality": {
+   "0": 7,
+   "4": 2,
+   "3": 1
+  },
+  "commons_credit": "Internet Archive identifier: fre_b2063628\nhttps://archive.org/download/fre_b2063628/fre_b2063628.pdf\nIA contributor: University of Ottawa",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/D%C3%A9fenses_de_Louis_Meigret_touchant_son_orthographe_francoeze_..._%28microforme%29_%28IA_fre_b2063628%29.pdf"
+ },
+ "Livre:Valla - De libero arbitrio, 1526.djvu": {
+  "Titre": "[[Du libre arbitre (Lorenzo Valla)",
+  "Auteur": "[[Auteur:Lorenzo Valla",
+  "Editeur": "A. Crat.",
+  "Lieu": "Basileae",
+  "Annee": "1526",
+  "Bibliotheque": "{{Gallica",
+  "BNF_ARK": "",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "1": 1
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID bpt6k5401626k",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Valla_-_De_libero_arbitrio%2C_1526.djvu"
+ },
+ "Livre:Cartier - Brief recit de la navigation faicte es ysles de Canada.djvu": {
+  "Titre": "[[Brief recit de la navigation faicte es ysles de Canada]]",
+  "Auteur": "[[Auteur:Jacques Cartier",
+  "Editeur": "Ponce Roffet et Anthoine le Clerc",
+  "Lieu": "Paris",
+  "Annee": "1545",
+  "Bibliotheque": "",
+  "BNF_ARK": "bpt6k521342",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "4": 34,
+   "3": 7,
+   "1": 55
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID bpt6k521342",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Cartier_-_Brief_recit_de_la_navigation_faicte_es_ysles_de_Canada.djvu"
+ },
+ "Livre:Dentiere - Epistre très utile faicte et composée par une femme chrestienne de Tornay, 1539.pdf": {
+  "Titre": "[[Epistre tresutile faicte et composée par une femme Chrestienne de Tornay]]",
+  "Auteur": "{{Creator",
+  "Editeur": "",
+  "Lieu": "",
+  "Annee": "",
+  "Bibliotheque": "[https://doi.org/10.3931/e-rara-12685 e-rara]",
+  "BNF_ARK": "",
+  "Source": "pdf",
+  "Avancement": "T",
+  "quality": {
+   "0": 6,
+   "4": 64
+  },
+  "commons_credit": "https://doi.org/10.3931/e-rara-12685",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Dentiere_-_Epistre_tr%C3%A8s_utile_faicte_et_compos%C3%A9e_par_une_femme_chrestienne_de_Tornay%2C_1539.pdf"
+ },
+ "Livre:Aneau - Alector, 1560.djvu": {
+  "Titre": "[[Alector]]",
+  "Auteur": "[[Auteur:Barthélemy Aneau",
+  "Editeur": "Alton",
+  "Lieu": "Lyon",
+  "Annee": "1560",
+  "Bibliotheque": "",
+  "BNF_ARK": "bpt6k79073s",
+  "Source": "djvu",
+  "Avancement": "C",
+  "quality": {
+   "1": 352,
+   "0": 1
+  },
+  "commons_credit": "Bibliothèque nationale de France",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Aneau_-_Alector%2C_1560.djvu"
+ },
+ "Livre:Rabelais - Pantagruel, ca 1530.djvu": {
+  "Editeur": "C. Nourry",
+  "Lieu": "Lyon",
+  "Annee": "ca 1532",
+  "BNF_ARK": "btv1b86095855",
+  "Avancement": "V",
+  "quality": {
+   "0": 20,
+   "4": 58,
+   "3": 67
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID btv1b86095855",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Rabelais_-_Pantagruel%2C_ca_1530.djvu",
+  "wikidata": "Q124285733"
+ },
+ "Livre:Rabelais - Gargantua, Juste, Lyon, 1535.djvu": {
+  "Editeur": "Juste",
+  "Lieu": "Lyon",
+  "Annee": "1535",
+  "BNF_ARK": "btv1b86000209",
+  "Avancement": "V",
+  "quality": {
+   "4": 25,
+   "3": 178,
+   "0": 8
+  },
+  "commons_credit": "Bibliothèque nationale de France",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Rabelais_-_Gargantua%2C_Juste%2C_Lyon%2C_1535.djvu"
+ },
+ "Livre:Du Bellay - La Deffence, et illustration de la langue francoyse.djvu": {
+  "Editeur": "Arnoul l’Angelier",
+  "Lieu": "Paris",
+  "Annee": "1549",
+  "BNF_ARK": "bpt6k1050733",
+  "Avancement": "V",
+  "quality": {
+   "4": 20,
+   "3": 73
+  },
+  "commons_credit": "This file comes from Gallica Digital Library and is available under the digital ID bpt6k1050733",
+  "commons_licence": "Public domain",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Du_Bellay_-_La_Deffence%2C_et_illustration_de_la_langue_francoyse.djvu"
+ },
+ "_note": "Snapshot of fr.wikisource index-page fields and Wikimedia Commons file metadata retrieved via the MediaWiki API on 2026-10-21 (quality keys: 0 without text, 1 not proofread, 3 proofread once, 4 validated). Not a catalogue; for discovery and provenance tracing only."
+}

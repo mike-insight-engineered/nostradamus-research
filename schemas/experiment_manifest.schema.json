@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/experiment_manifest.schema.json",
+  "$defs": {
+    "DatasetSplit": {
+      "enum": [
+        "unassigned",
+        "development",
+        "validation",
+        "test"
+      ],
+      "title": "DatasetSplit",
+      "type": "string"
+    },
+    "EvidenceLevel": {
+      "description": "What kind of evidence a reported result rests on (strongest last).",
+      "enum": [
+        "synthetic_fixture",
+        "automated_only",
+        "human_non_expert",
+        "expert_reviewed"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "PipelineId": {
+      "enum": [
+        "A_direct",
+        "B_two_stage",
+        "C_retrieval",
+        "D_structured"
+      ],
+      "title": "PipelineId",
+      "type": "string"
+    },
+    "PromptTemplateRef": {
+      "additionalProperties": false,
+      "properties": {
+        "template_id": {
+          "title": "Template Id",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "template_id",
+        "version",
+        "sha256"
+      ],
+      "title": "PromptTemplateRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "failed",
+        "dry_run",
+        "partial"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    },
+    "pipeline": {
+      "$ref": "#/$defs/PipelineId"
+    },
+    "provider": {
+      "title": "Provider",
+      "type": "string"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "is_mock": {
+      "title": "Is Mock",
+      "type": "boolean"
+    },
+    "provider_params": {
+      "additionalProperties": true,
+      "title": "Provider Params",
+      "type": "object"
+    },
+    "prompt_templates": {
+      "items": {
+        "$ref": "#/$defs/PromptTemplateRef"
+      },
+      "title": "Prompt Templates",
+      "type": "array"
+    },
+    "dataset_path": {
+      "title": "Dataset Path",
+      "type": "string"
+    },
+    "dataset_sha256": {
+      "title": "Dataset Sha256",
+      "type": "string"
+    },
+    "passage_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Passage Ids",
+      "type": "array"
+    },
+    "splits_included": {
+      "items": {
+        "$ref": "#/$defs/DatasetSplit"
+      },
+      "title": "Splits Included",
+      "type": "array"
+    },
+    "test_split_accessed": {
+      "default": false,
+      "title": "Test Split Accessed",
+      "type": "boolean"
+    },
+    "test_access_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Test Access Reason"
+    },
+    "data_origin_counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Data Origin Counts",
+      "type": "object"
+    },
+    "evidence_level": {
+      "$ref": "#/$defs/EvidenceLevel"
+    },
+    "config_sha256": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Config Sha256",
+      "type": "object"
+    },
+    "git_commit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Git Commit"
+    },
+    "git_dirty": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Git Dirty"
+    },
+    "package_version": {
+      "title": "Package Version",
+      "type": "string"
+    },
+    "python_version": {
+      "title": "Python Version",
+      "type": "string"
+    },
+    "dependency_lock_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Dependency Lock Sha256"
+    },
+    "retrieval_store_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Retrieval Store Sha256"
+    },
+    "n_results": {
+      "default": 0,
+      "title": "N Results",
+      "type": "integer"
+    },
+    "n_failed": {
+      "default": 0,
+      "title": "N Failed",
+      "type": "integer"
+    },
+    "total_input_tokens": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Total Input Tokens"
+    },
+    "total_output_tokens": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Total Output Tokens"
+    },
+    "total_cost_usd": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Total Cost Usd"
+    },
+    "cost_note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cost Note"
+    },
+    "runtime_seconds": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Runtime Seconds"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Notes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "run_id",
+    "created_at",
+    "status",
+    "pipeline",
+    "provider",
+    "model",
+    "is_mock",
+    "dataset_path",
+    "dataset_sha256",
+    "passage_ids",
+    "splits_included",
+    "evidence_level",
+    "package_version",
+    "python_version"
+  ],
+  "title": "ExperimentManifest",
+  "type": "object"
+}

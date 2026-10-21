@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nostradamus-research/schemas/human_review.schema.json",
+  "$defs": {
+    "ErrorCategory": {
+      "description": "MQM-inspired error taxonomy adapted for historical-language translation.",
+      "enum": [
+        "mistranslation",
+        "historical_lexical",
+        "grammar",
+        "omission",
+        "unsupported_addition",
+        "language_identification",
+        "lost_ambiguity",
+        "invented_specificity",
+        "names_dates",
+        "transcription",
+        "fluency",
+        "other"
+      ],
+      "title": "ErrorCategory",
+      "type": "string"
+    },
+    "MQMError": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/ErrorCategory"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "target_language": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TargetLanguage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Which output the error is in; null for source-level errors."
+        },
+        "span": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "severity",
+        "note"
+      ],
+      "title": "MQMError",
+      "type": "object"
+    },
+    "ReviewJudgement": {
+      "enum": [
+        "acceptable",
+        "unacceptable",
+        "unresolvable"
+      ],
+      "title": "ReviewJudgement",
+      "type": "string"
+    },
+    "ReviewerProvenance": {
+      "enum": [
+        "expert",
+        "non_expert",
+        "synthetic_fixture"
+      ],
+      "title": "ReviewerProvenance",
+      "type": "string"
+    },
+    "Severity": {
+      "enum": [
+        "neutral",
+        "minor",
+        "major",
+        "critical"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "TargetLanguage": {
+      "enum": [
+        "fr",
+        "en"
+      ],
+      "title": "TargetLanguage",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "review_id": {
+      "title": "Review Id",
+      "type": "string"
+    },
+    "review_item_id": {
+      "description": "Blinded item ID from the review package.",
+      "title": "Review Item Id",
+      "type": "string"
+    },
+    "package_id": {
+      "title": "Package Id",
+      "type": "string"
+    },
+    "reviewer_id": {
+      "minLength": 2,
+      "title": "Reviewer Id",
+      "type": "string"
+    },
+    "reviewer_provenance": {
+      "$ref": "#/$defs/ReviewerProvenance"
+    },
+    "reviewed_on": {
+      "format": "date",
+      "title": "Reviewed On",
+      "type": "string"
+    },
+    "judgement_fr": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewJudgement"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "judgement_en": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewJudgement"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "errors": {
+      "items": {
+        "$ref": "#/$defs/MQMError"
+      },
+      "title": "Errors",
+      "type": "array"
+    },
+    "alternative_readings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Alternative Readings",
+      "type": "array"
+    },
+    "ambiguity_flag": {
+      "default": false,
+      "title": "Ambiguity Flag",
+      "type": "boolean"
+    },
+    "unresolvable": {
+      "default": false,
+      "title": "Unresolvable",
+      "type": "boolean"
+    },
+    "reviewer_confidence": {
+      "anyOf": [
+        {
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Confidence"
+    },
+    "supporting_references": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supporting References",
+      "type": "array"
+    },
+    "comments": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Comments"
+    },
+    "time_spent_minutes": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Time Spent Minutes"
+    }
+  },
+  "required": [
+    "review_id",
+    "review_item_id",
+    "package_id",
+    "reviewer_id",
+    "reviewer_provenance",
+    "reviewed_on"
+  ],
+  "title": "HumanReview",
+  "type": "object"
+}

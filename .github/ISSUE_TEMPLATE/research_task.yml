@@ -1,0 +1,55 @@
+name: Research task
+description: A backlog activity (CAL-xx) or other research work item.
+title: "[CAL-xx] "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Research tasks distinguish **software** work from **historical research / data acquisition**.
+        A task is not complete because a template or empty directory exists.
+  - type: input
+    id: backlog_id
+    attributes:
+      label: Backlog ID
+      placeholder: CAL-05
+    validations:
+      required: true
+  - type: dropdown
+    id: workstream
+    attributes:
+      label: Workstream
+      options: [software, research, both]
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and acceptance criteria
+      description: What must be true when this is done? How will it be verified, and by whom?
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Sources, data or dependencies
+      description: Registry IDs, passage IDs, depends-on backlog items.
+  - type: dropdown
+    id: quality_dimension
+    attributes:
+      label: Quality dimension
+      multiple: true
+      options: ["QC1 transcription", "QC2 translation", "QC3 interpretation (architecture only in M1)"]
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Integrity checklist
+      options:
+        - label: No fabricated transcriptions, citations, references or review scores
+          required: true
+        - label: No held-out test data used for tuning or selection
+          required: true
+        - label: No paid API calls without explicit authorisation
+          required: true
+        - label: Rights confirmed before committing any source or translation text
+          required: true
