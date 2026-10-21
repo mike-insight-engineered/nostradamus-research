@@ -1,5 +1,8 @@
 # Source acquisition plan (CAL-02, CAL-05–CAL-08)
 
+> **Status 2026-10-21 (Phase 2):** steps 1–3 carried out where access allowed; see `research/pilot/README.md`.
+> Step 4 has produced 4 unverified AI-assisted drafts; no human check yet. Steps 5–6 not started.
+
 ## Goal
 
 Twenty pilot passages (5 French prose, 5 French poetry, 5 Latin, 5 mixed/difficult) from

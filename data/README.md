@@ -9,6 +9,8 @@
 | `processed/` | `passages.jsonl`: the canonical research corpus | Yes |
 | `splits/` | Split plans and the pilot manifest | Yes |
 | `annotations/` | `lexical_evidence.jsonl`, `reviews/`, `review_packages/` (keys are git-ignored) | Yes (except keys) |
+| `candidates/` | Pilot candidate manifest (20 slots; candidates only) | Yes |
+| `transcriptions/drafts/` | AI-assisted **unverified** drafts: `*.cleared.jsonl` (committable) and `*.pending-rights.jsonl` (git-ignored) | Cleared file only |
 | `fixtures/` | **Synthetic** test/demo data (`SYN-` IDs) | Yes |
 
 ## Rules
@@ -23,5 +25,6 @@
 - **Diplomatic transcriptions are locked by hash.** See `docs/transcription-policy.md`.
 - Validate after every change: `uv run nr sources validate && uv run nr passages validate && uv run nr corpus provenance`.
 
-Current state (2026-10-21): the registry holds candidate records only. `processed/passages.jsonl`
-does not exist yet, and `annotations/lexical_evidence.jsonl` is empty.
+Current state (2026-10-21, after Phase 2): the registry holds 24 `located` and 23 `candidate` records (none
+`provenance_checked`). 20 pilot slots are listed in `candidates/`, and 4 unverified draft transcriptions are in
+`transcriptions/drafts/` (1 cleared, 3 rights-pending). Licensing: `../DATA_LICENSE.md`. `processed/passages.jsonl` does not exist yet, and `annotations/lexical_evidence.jsonl` is empty.

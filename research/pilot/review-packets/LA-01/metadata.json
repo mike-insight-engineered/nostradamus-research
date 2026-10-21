@@ -1,0 +1,125 @@
+{
+  "slot": {
+    "slot_id": "LA-01",
+    "pilot_group": "latin",
+    "source_id": "SRC-ERASMUS-MORIAE-1512-SCHURER",
+    "locator": "sig. Aa iiij recto; e-rara canvas 17496718",
+    "page_level_locator": true,
+    "passage": "'Tametſi quorſum tandem attinet, … Græci μωρίαν appellant.' (c. 40 words)",
+    "linguistic_challenges": [
+      "embedded Greek (ἐάων, μωρίαν)",
+      "-que abbreviation (atqꝫ)",
+      "rhetorical periodic syntax",
+      "printed marginal gloss"
+    ],
+    "selection_rationale": "Humanist Latin prose with Greek code-switching; Public Domain Mark facsimile; VD16-referenced edition.",
+    "facsimile": "https://www.e-rara.ch/i3f/v20/17496718/full/full/0/default.jpg",
+    "transcription_status": "draft_ai_unverified",
+    "draft_passage_id": "PSG-LP-0001",
+    "reference_translation_status": "none_obtained (see research/pilot/reference-translation-matrix.md)",
+    "human_verification_status": "not_started",
+    "blockers": [],
+    "same_work_as": [],
+    "candidate_status": "candidate",
+    "audit_flags": [
+      "edition_mismatch_with_published_translations",
+      "author_leakage:Erasmus(LA-02,LA-05,MX-04)"
+    ],
+    "proposed_replacement": null,
+    "draft_location": "data/transcriptions/drafts/pilot_draft_passages.cleared.jsonl"
+  },
+  "source": {
+    "source_id": "SRC-ERASMUS-MORIAE-1512-SCHURER",
+    "record_type": "witness",
+    "data_origin": "historical_source",
+    "title": "Moriae Encomivm Erasmi Roterodami Declamatio ...",
+    "author": "Desiderius Erasmus",
+    "work_id": "WORK-ERASMUS-MORIAE",
+    "date_text": "Mense Octobri. Anno M. D. XII",
+    "date_earliest": 1512,
+    "date_latest": 1512,
+    "languages": [
+      "lat"
+    ],
+    "genres": [
+      "prose"
+    ],
+    "edition": "[42] Bl.; 21 cm (4°)",
+    "printer_publisher": "Ex Aedibus Schurerianis (Matthias Schürer)",
+    "place_of_publication": "Argentorat. (Strasbourg)",
+    "holding_institution": "Zentralbibliothek Zürich, III M 81,2",
+    "catalogue_identifier": "e-rara 17496710; VD 16 E 3181; Bezzel (Erasmus) 1300",
+    "stable_url": "https://doi.org/10.3931/e-rara-64232",
+    "persistent_identifier": "doi:10.3931/e-rara-64232",
+    "locator": null,
+    "scan_available": true,
+    "transcription_available": false,
+    "rights_status": "public_domain",
+    "licence": "Public Domain Mark 1.0 (e-rara)",
+    "rights_notes": "Layered rights: (1) WORK: public domain by age. (2) FACSIMILE: e-rara record states licence 'Public Domain Mark'; e-rara terms of use (READ at https://www.e-rara.ch/wiki/termsOfUse, 2026-10-21): PDM documents 'können für wissenschaftliche, private, nicht-kommerzielle und kommerzielle Zwecke frei verwendet werden'; citation with DOI requested. (3) MODERN TRANSCRIPTION: none known. (4) TRANSLATIONS: see research/pilot/reference-translation-matrix.md. (5) METADATA: e-rara record; terms not separately checked.",
+    "verification_status": "located",
+    "verification_evidence": [],
+    "status_history": [],
+    "date_accessed": "2026-10-21",
+    "authenticity_notes": "e-rara record and IIIF manifest metadata agree (impressum, extent, VD16 E 3181). Page image (canvas 17496718) shows signature 'Aa iiij'.",
+    "uncertainty_notes": "Bibliographic data below come from the cited records; no person has yet compared them with the physical or facsimile title page.",
+    "outstanding_work": [
+      "Human verifier: compare title page/colophon in the e-rara facsimile with the e-rara record and the cited VD16 entry",
+      "Look up the edition in USTC and record the USTC number",
+      "Record catalogue_record evidence by a named person to reach provenance_checked"
+    ],
+    "notes": "Candidate for Renaissance Latin prose with embedded Greek and printed marginal glosses. Not the 1511 Paris first edition (SRC-ERASMUS-MORIAE-1511 remains a separate candidate)."
+  },
+  "draft": {
+    "passage_id": "PSG-LP-0001",
+    "source_id": "SRC-ERASMUS-MORIAE-1512-SCHURER",
+    "data_origin": "historical_source",
+    "author_id": "AUTH-ERASMUS",
+    "author": "Desiderius Erasmus",
+    "work_id": "WORK-ERASMUS-MORIAE",
+    "witness_id": "Zentralbibliothek Zürich, III M 81,2",
+    "language": "lat",
+    "secondary_languages": [],
+    "genre": "prose",
+    "category": "latin_prose",
+    "pilot_group": null,
+    "difficulty_flags": [
+      "greek_code_switching",
+      "abbreviations"
+    ],
+    "date_text": "Mense Octobri. Anno M. D. XII",
+    "date_earliest": 1512,
+    "date_latest": 1512,
+    "diplomatic_transcription": "Tametſi quorſum tandem attinet,\nmei velut vmbram atqꝫ imaginem finitione repræſenta\nre , cum ipſam me coram præſentes præſentem oculis\nintueamini ? Sum etenim vti videtis , vera illa largitrix\nἐάων, quam Latini ſtulticiam, Græci μωρίαν appellant.",
+    "diplomatic_sha256": "2e58e3c298d1eae0d15f3815c10c6a3a99c3c9f63c2ffc8717d514dd36520f56",
+    "transcription_format": "plain",
+    "transcribed_by": "Claude Code (AI-assisted reading of facsimile image; UNVERIFIED)",
+    "typography_notes": "Roman type with Greek. Passage begins mid-line (preceding words on the line: 'genus ita cõſentiat ,'). Lineation as printed; no hyphen at 'repræſenta|re'. 'atqꝫ' = atque with the -que abbreviation sign (ꝫ, U+A76B). æ ligature kept. Space before some commas and before '?' as printed. Initial v in 'vmbram', 'vti'.",
+    "spelling_notes": "Printed marginal gloss beside the Greek line reads '.i.honoꝝ' or '.i.bonoꝝ' (first letter uncertain) — recorded here, not in the text. UNCERTAIN: accents/breathings of the Greek words; '?' mark shape.",
+    "normalised_reading": null,
+    "normalisation_rules": [],
+    "normalised_by": null,
+    "locator": "Signature 'Aa iiij' (recto, per signature line at foot); e-rara canvas 17496718 (IIIF image https://www.e-rara.ch/i3f/v20/17496718).",
+    "facsimile_reference": "https://www.e-rara.ch/i3f/v20/17496718/pct:10,40,82,26/1500,/0/default.jpg (crop read; sha256 26d57f013b188db1f8a615a58c9617207c3b3ca582b601069fd9a0bfc00339c7); full page: https://www.e-rara.ch/i3f/v20/17496718/full/full/0/default.jpg; record https://doi.org/10.3931/e-rara-64232",
+    "textual_variants": [],
+    "difficult_words": [],
+    "linguistic_annotations": [],
+    "lexical_evidence_ids": [],
+    "ambiguities": [],
+    "historical_assertions": [],
+    "proposed_interpretations": [],
+    "verification_status": "candidate",
+    "split": "unassigned",
+    "review_history": [
+      {
+        "on": "2026-10-21",
+        "by": "Claude Code (AI-assisted reading of facsimile image; UNVERIFIED)",
+        "action": "created",
+        "notes": "Draft transcription created from facsimile image; diplomatic hash locked.",
+        "from_status": null,
+        "to_status": null
+      }
+    ],
+    "notes": "AI-ASSISTED DRAFT. Produced by Claude Code reading a facsimile image; NOT checked by any person. Must be verified line by line against the facsimile by a human transcriber and an independent checker (docs/transcription-verification-protocol.md) before any status change. No reference translations attached. No modern transcription was consulted (none found for this edition). Public Domain Mark facsimile."
+  }
+}

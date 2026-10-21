@@ -7,7 +7,7 @@
 # workstream is Complete AND evidence is cited. A template or empty directory
 # is never evidence of completion.
 milestone: M1
-updated: "2026-10-21"
+updated: "2026-10-21 (Phase 2 remediation)"
 items:
   - id: CAL-01
     title: Create repository research protocol and project configuration
@@ -27,11 +27,17 @@ items:
     research_status: In progress
     depends_on: [CAL-01]
     deliverables: [data/sources/source_registry.jsonl, data/sources/source_candidates.csv, docs/source-authentication.md]
-    evidence: ["26 candidate records registered; 0 located, 0 provenance-checked"]
+    evidence:
+      - "Remediation: 50 records — 26 located, 24 candidate, 0 provenance_checked"
+      - "research/pilot/rights-provenance-matrix.md (determinations with URL, evidence type, date)"
+      - "research/pilot/source-licence-audit.md (layered rights per platform and witness)"
+      - "research/pilot/evidence/ (BnF catalogue matches, e-rara records, BVH rights excerpts)"
     notes: >-
-      Registry, status-transition policy and licensing fields are implemented. Every record is a
-      candidate: no URL has been accessed and no witness authenticated. Licensing terms for BVH,
-      Gallica, Frantext, Perseus and Huguet are unconfirmed.
+      Witnesses matched to BnF catalogue records via Gallica links, or to e-rara records with VD16
+      references. No catalogue_record evidence has been entered by a named person, so no witness is
+      provenance_checked. Open: current Gallica terms (page not readable), BVH licence conflict,
+      USTC numbers, digitised-copy identification (research/pilot/provenance-issues.md). Remediation READ BnF
+      metadata licence (Licence Ouverte) and e-rara terms; the Gallica CGU is still unread (HTTP 403).
 
   - id: CAL-03
     title: Define sampling and dataset partition methodology
@@ -57,47 +63,67 @@ items:
   - id: CAL-05
     title: Acquire five verified French prose passages
     workstream: research
-    status: Not started
+    status: In progress
     software_status: n/a
-    research_status: Not started
+    research_status: In progress
     depends_on: [CAL-02]
-    notes: Candidate witnesses include Rabelais, Montaigne, du Bellay (Deffence), Marguerite de Navarre.
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (FP-01..FP-05)"
+      - "data/transcriptions/drafts/pilot_draft_passages.jsonl (PSG-FP-0001)"
+    notes: >-
+      Slots FP-01..FP-05 identified (du Bellay Deffence 1549; Heptaméron 1559; Crenne Songe 1541; Aneau Alector 1560; Dentière Epistre 1539). One AI-assisted UNVERIFIED draft (PSG-FP-0001). 0 verified passages.
 
   - id: CAL-06
     title: Acquire five verified French poetry passages
     workstream: research
-    status: Not started
+    status: In progress
     software_status: n/a
-    research_status: Not started
+    research_status: In progress
     depends_on: [CAL-02]
-    notes: Candidate witnesses include Ronsard, Louise Labé, du Bellay (Regrets), Marot.
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (FV-01..FV-05)"
+      - "PSG-FV-0001 draft"
+    notes: >-
+      Slots FV-01..FV-05 identified (Pernette du Guillet 1545; du Bellay Olive 1549; Ronsard Continuation 1555; Marot Oeuvres 1547; Marguerites 1547). One UNVERIFIED draft (PSG-FV-0001). Louise Labé 1555 not yet located. 0 verified passages.
 
   - id: CAL-07
     title: Acquire five verified Renaissance Latin passages
     workstream: research
-    status: Not started
+    status: In progress
     software_status: n/a
-    research_status: Not started
+    research_status: In progress
     depends_on: [CAL-02]
-    notes: Candidate witnesses include Erasmus (Moriae encomium, Colloquia), du Bellay (Poemata).
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (LA-01..LA-05)"
+      - "PSG-LP-0001 draft"
+    notes: >-
+      Remediation: LA-05 replacement proposed (Atrocianus 1528). Slots LA-01..LA-05 identified (Erasmus Moriae Strasbourg 1512; Colloquia Basel 1520 and Zürich c.1540 — same work; Bèze Poemata 1548; Valla Basel 1526). One UNVERIFIED draft (PSG-LP-0001). 0 verified passages.
 
   - id: CAL-08
     title: Acquire five verified multilingual or difficult passages
     workstream: research
-    status: Not started
+    status: In progress
     software_status: n/a
-    research_status: Not started
+    research_status: In progress
     depends_on: [CAL-02]
-    notes: Candidates include latinising/macaronic passages in Rabelais. Occitan-influenced texts still to be identified.
+    evidence:
+      - "data/candidates/pilot_candidates.jsonl (MX-01..MX-05)"
+      - "PSG-MX-0001 draft"
+    notes: >-
+      Remediation: MX-05 replacement proposed (Hypnérotomachie 1546); MX-01 image loss traced to binding; MX-02 image unusable (compression). Slots MX-01..MX-05 identified (Rabelais Pantagruel [1532] Limousin; Gargantua 1535 Janotus; Peletier 1550; Moriae Greek proverb; Meigret 1550 — blocked, second-generation witness). One UNVERIFIED draft (PSG-MX-0001). Occitan-influenced texts not yet identified. 0 verified passages.
 
   - id: CAL-09
     title: Obtain independent reference translations
     workstream: research
-    status: Not started
+    status: In progress
     software_status: n/a
-    research_status: Not started
+    research_status: In progress
     depends_on: [CAL-05, CAL-06, CAL-07, CAL-08]
-    notes: References must be independent of evaluated models and rights-cleared; multiple references per passage encouraged.
+    evidence:
+      - "research/pilot/reference-translation-matrix.md"
+      - "research/pilot/reference-translation-queue.md (brief)"
+    notes: >-
+      Remediation: three published translations CONFIRMED to exist (Finch 2010; Helgerson 2006; Miller 1979), none licensed, base texts not yet confirmed; assignments for the four Target-1 passages prepared. Nothing obtained or licensed. Edition-mismatch caveat recorded. Translator brief prepared. References must be independent and rights-cleared.
 
   - id: CAL-10
     title: Complete review of the initial 20-passage feasibility dataset
@@ -106,6 +132,9 @@ items:
     software_status: n/a
     research_status: Not started
     depends_on: [CAL-09]
+    notes: >-
+      Not started. Materials ready: full review packets for the four drafts (research/pilot/review-packets/),
+      per-slot sheets, docs/transcription-verification-protocol.md. Target 1 = FV-01, LA-01, FP-01, MX-01.
 
   - id: CAL-11
     title: Expand the corpus to 80 verified passages

@@ -1,5 +1,10 @@
 # Candidate authors and works
 
+> **Phase 2 update (2026-10-21):** the witnesses actually selected for the pilot, with catalogue references,
+> are in `research/pilot/README.md`. Several differ from the editions listed below (e.g. Erasmus *Moriae*
+> Strasbourg 1512 instead of Paris 1511; Marot *Œuvres* Lyon 1547 instead of the 1532 *Adolescence*). Louise Labé
+> (1555) has not yet been located in an accessible facsimile.
+
 Candidates for the calibration corpus. Bibliographic details are **unverified** until the
 corresponding registry record reaches `provenance_checked`. Nostradamus is deliberately excluded
 from M1.

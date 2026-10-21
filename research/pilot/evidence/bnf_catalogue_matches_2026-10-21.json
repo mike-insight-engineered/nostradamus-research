@@ -1,0 +1,469 @@
+{
+ "btv1b86095855": {
+  "catalogue_ark": "ark:/12148/cb311673938",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22pantagruel%22+and+bib.date+all+%221532%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19930813f15311532m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Pantagruel. Les horribles et espoventables faictz et prouesses du tresrenommé Pantagruel, roy des Dipsodes, filz du grand géant Gargantua , composez nouvellement par Maistre Alcofrybas Nasier $b Texte imprimé"
+  ],
+  "210": [],
+  "214": [],
+  "215": [
+   "$a [64] f. $d in-4"
+  ],
+  "300": [
+   "$a Sig. A-Q4",
+   "$a Encadrement au titre. Caractères gothiques"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b86095855"
+  ],
+  "930": [
+   "$5 FR-751131011:31167393001001 $a RES-Y2-2146 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131010:31167393002001 $a MICROFILM M-2080 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-751131011:31167393003001 $a Y Usuels Réserve Fac-sim. B / Rab. 2 $b 759999999 $c Tolbiac - Réserve - Libre accès $d N $v Reprod. photographique",
+   "$5 FR-759999999:31167393004001 $a IFN-8609585 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b86000209": {
+  "catalogue_ark": "ark:/12148/cb31167378c",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22gargantua%22+and+bib.date+all+%221535%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19930813d1535    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Gargantua. La Vie inestimable du grand Gargantua, père de Pantagruel ,  jadis composée par l'abstracteur de quinte essence. Livre plein de pantagruélisme $b Texte imprimé"
+  ],
+  "210": [],
+  "214": [],
+  "215": [
+   "$a [104] f. (sign. A-N8) $d in-8"
+  ],
+  "300": [
+   "$a Lettres ornées, car. goth., titre encadré imprimé en rouge et noir avec la devise de l'auteur : \" Αγαθη Τυχη\""
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b86000209"
+  ],
+  "930": [
+   "$5 FR-751131011:31167378001001 $a RES-Y2-2130 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131010:31167378002001 $a MICROFILM M-2044 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-759999999:31167378005001 $a IFN-8600020 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k1050733": {
+  "catalogue_ark": "ark:/12148/cb36123953k",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22deffence+illustration%22+and+bib.date+all+%221549%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19930727d1549    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a La Deffence, et illustration de la langue francoyse . Par I. D. B. A."
+  ],
+  "210": [],
+  "214": [],
+  "215": [
+   "$a [47]-[1 bl.] f. $d in-8"
+  ],
+  "300": [
+   "$a Première édition",
+   "$a Au titre, initiales « I. D. B. A. » (Joachim Du Bellay Angevin) ; sonnet « A l'Ambitieux, et avare ennemy des bonnes lettres » signé de sa devise « Caelo musa beat »",
+   "$a Le privilège est commun à la « Deffence » et à « L'Olive », recueil de sonnets paru la même année",
+   "$a Épître dédicatoire de l'auteur au cardinal Jean Du Bellay, datée de Paris le 15 février 1549",
+   "$a Poème en grec de Jean Dorat",
+   "$a Lettrines gravées sur bois",
+   "$a Sig. a-e8, f8",
+   "$a Certaines éditions, postérieures, ont paru avec nom d'auteur",
+   "$a Traité  polémique sur la langue française"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k1050733",
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b8609518r"
+  ],
+  "930": [
+   "$5 FR-751131011:36123953001001 $a RES-X-1888 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131010:36123953002001 $a MFILM RES-X-1888 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-751041002:36123953003001 $a RESERVE 8-BL-1283 (1) $b 759999999 $c Arsenal - Magasin $d N $v Recueil factice ; Communication soumise à autorisation",
+   "$5 FR-759999999:36123953004001 $a NUMM-105073 $b 759999999 $c Document numérisé $d N",
+   "$5 FR-759999999:36123953005001 $a IFN-8609518 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b86171930": {
+  "catalogue_ark": "ark:/12148/cb39335597j",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22heptameron%22+and+bib.date+all+%221559%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 20001120d1559    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a L'heptameron des nouvelles de tresillustre et tresexcellente princesse Marguerite de Valois, royne de Navarre, remis en son ordre, confus au paravant en sa premiere impression : & dedié à tresillustre & tresvertueuse princesse Jeanne de Foix royne de Navarre, par Claude Gruget parisien $b Texte imprimé"
+  ],
+  "210": [
+   "$e Imprimé à Paris, par Benoist Prevost, demeurant en la rue Frementel, pres le Cloz Bruneau, à l'enseigne de l'Estoille d'or. 1559 $h 1559"
+  ],
+  "214": [
+   "$s Imprimé à Paris, par Benoist Prevost, demeurant en la rue Frementel, pres le Cloz Bruneau, à l'enseigne de l'Estoille d'or. 1559 $d 1559"
+  ],
+  "215": [
+   "$a [6]-214 f. $d in-4"
+  ],
+  "300": [
+   "$a Marque au titre"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b86171930"
+  ],
+  "930": [
+   "$5 FR-751041002:39335597001001 $a RESERVE 4-BL-4332 $b 759999999 $c Arsenal - Magasin $d N $v Communication soumise à autorisation",
+   "$5 FR-759999999:39335597002001 $a IFN-8617193 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b8608308c": {
+  "catalogue_ark": "ark:/12148/cb30285823f",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22songe+helisenne%22+and+bib.date+all+%221541%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1541    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Le Songe de madame Helisenne composé par ladicte dame, la consideration duquel, est apte à instiguer toutes personnes de s'alliener de vice, & s'approcher de vertu . De Crenne $b Texte imprimé"
+  ],
+  "210": [
+   "$a Paris $c D. Janot $d 1541"
+  ],
+  "214": [],
+  "215": [
+   "$a Sign. A-K, fig. $d in-8"
+  ],
+  "300": [],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b8608308c"
+  ],
+  "930": [
+   "$5 FR-751131011:30285823001001 $a RES P-R-161 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131007:30285823002001 $a MICROFILM M-9043 $b 759999999 $c Tolbiac - Rez de Jardin - Philosophie, histoire, sciences de l'homme - Magasin $d O",
+   "$5 FR-751131007:30285823003001 $a R13842 $b 759999999 $c Tolbiac - Haut de Jardin - Philosophie, histoire, sciences de l'homme - Magasin $d N",
+   "$5 FR-759999999:30285823006001 $a IFN-8608308 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k700023": {
+  "catalogue_ark": "ark:/12148/cb31242512j",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22amours%22+and+bib.date+all+%221553%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19930813d1553    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Les amours de P. de Ronsard ,... nouvellement augmentées par lui, et commentées par Marc-Antoine de Muret. Plus quelques odes de l'auteur, non encor imprimées $b Texte imprimé"
+  ],
+  "210": [
+   "$a Paris $c Vve M. de La Porte $d 1553"
+  ],
+  "214": [],
+  "215": [
+   "$a 284 p. $c portraits de Ronsard, de Cassandre et de Muret $d in-8"
+  ],
+  "300": [
+   "$a Les portr. de Ronsard et de Cassandre sont accompagnés de quatrains en grec de Baïf, et celui de Muret d'un quatrain en latin de Memmius Fremiot",
+   "$a La musique imprimée sur les f. n.c. à la fin, sans nom d'imprimeur, porte un achevé d'imprimer daté 1552",
+   "$a La numérotation des pages saute de 128 à 139",
+   "$a Gr. représentant Ronsard à 27 ans, Cassandre à 20 ans et Muret à 25 ans",
+   "$a Aux f. limin., vers de Antoine de Barf, Memmius Fremiot, Etienne Jodelle, M. de S.G. [Mellin de Saint-Gelais]"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b8609593q",
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k700023"
+  ],
+  "930": [
+   "$5 FR-751131011:31242512001001 $a RES P-YE-125 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131011:31242512002001 $a RES-YE-1905 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131010:31242512003001 $a MICROFILM M-2072 (3) $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-751021003:31242512004001 $a VM BOB-845 $b 759999999 $c Richelieu - Musique - Magasin $d N",
+   "$5 FR-751021003:31242512005001 $a RES-80 $b 759999999 $c Richelieu - Musique - Magasin $d N",
+   "$5 FR-759999999:31242512006001 $a IFN-8609593 $b 759999999 $c Document numérisé $d N",
+   "$5 FR-759999999:31242512007001 $a NUMM-70002 $b 759999999 $c Document numérisé $d N",
+   "$5 FR-759999999:31242512012001 $a NUMS-100750879 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k70074z": {
+  "catalogue_ark": "ark:/12148/cb31242513w",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22continuation+amours%22+and+bib.date+all+%221555%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1555    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a fre"
+  ],
+  "200": [
+   "$a Continuation des Amours de P. de Ronsard $b Texte imprimé"
+  ],
+  "210": [
+   "$a Paris $c V. Certenas [sic] $d 1555"
+  ],
+  "214": [],
+  "215": [
+   "$a 93 p. $d in-8"
+  ],
+  "300": [
+   "$a Le privilège est au nom de Vincent Sertenas et Jean Dallier"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k70074z"
+  ],
+  "930": [
+   "$5 FR-751131011:31242513001001 $a RES-YE-4758 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-759999999:31242513002001 $a NUMM-70074 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b86095195": {
+  "catalogue_ark": "ark:/12148/cb30357502p",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22olive%22+and+bib.date+all+%221549%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1549    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a L'Olive et quelques autres oeuvres poeticques . Le contenu de ce livre. Cinquante Sonnetz à la louange de l'Olive. L'Anterotique de la vieille, & de la jeune Amye. Vers Lyriques. Par I. D. B. A. Caelo Musa Beat. $b Texte imprimé"
+  ],
+  "210": [],
+  "214": [],
+  "215": [
+   "$a [40] f. $d in-8"
+  ],
+  "300": [
+   "$a I. D. B. A. = Joachim Du Bellay Angevin, dont la devise figure au titre",
+   "$a Privilège royal du 20 mars 1549 n. st. pour 3 ans à Arnoul L'Angelier, commun à ce recueil et à la « Deffence et illustration de la langue francoyse », publiée la même année",
+   "$a Avec un poème en latin de Jean Dorat",
+   "$a Sig. A-E8"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b86095195"
+  ],
+  "930": [
+   "$5 FR-751131011:30357502001001 $a RES-X-1889 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131011:30357502002001 $a RES-YE-1736 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751041002:30357502003001 $a RESERVE 8-BL-1283 (2) $b 759999999 $c Arsenal - Magasin $d N $v Recueil factice",
+   "$5 FR-751131010:30357502004001 $a MFILM RES-X-1889 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-759999999:30357502007001 $a IFN-8609519 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b8609525w": {
+  "catalogue_ark": "ark:/12148/cb315505552",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22rymes%22+and+bib.date+all+%221545%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1545    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Rymes de gentile et vertueuse dame D. Pernette Du Guillet,... $b Texte imprimé $f [avec une préf. par Antoine Du Moulin]"
+  ],
+  "210": [
+   "$a Lyon $c J. de Tournes $d 1545"
+  ],
+  "214": [],
+  "215": [
+   "$a 80 p. $d in-8"
+  ],
+  "300": [
+   "$a La première de ces trois Épitaphes, signée : \"M. Sc.\", est de Maurice Scève ; les deux autres, signées respectivement : \"D. V. Z.\" et \"I. D. V.\", sont attribuées à Jean de Vauzelles par É. Picot, \"Catalogue des livres... de... James de Rothschild\", I, 637"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b8609525w",
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k70127q"
+  ],
+  "930": [
+   "$5 FR-751131011:31550555001001 $a RES-YE-1341 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751021006:31550555002001 $a ROTHSCHILD-637 $b 759999999 $c Richelieu - Manuscrits - Magasin $d N $v II, 1, 71",
+   "$5 FR-759999999:31550555003001 $a IFN-8609525 $b 759999999 $c Document numérisé $d N",
+   "$5 FR-759999999:31550555004001 $a NUMM-70127 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k109342q": {
+  "catalogue_ark": "ark:/12148/cb308886109",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22oeuvres+marot%22+and+bib.date+all+%221547%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1547    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Les oeuvres de Clément Marot, de Cahors, valet de chambre du roy $b Texte imprimé"
+  ],
+  "210": [
+   "$a Lyon $c G. Roville $d 1547"
+  ],
+  "214": [],
+  "215": [
+   "$a 2 vol. $d in-16"
+  ],
+  "300": [
+   "$a A la fin du 1er vol., de la 1re et de la 3e parties du 2e vol., se trouve la mention : \"Imprimé à Lyon, par Estienne Roussin et Jean Ausoult\""
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k109342q",
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k111432q",
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k87113710",
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k8711370k"
+  ],
+  "930": [
+   "$5 FR-751131011:30888610001001 $a RES-YE-1564 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131011:30888610001002 $a RES-YE-1565 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131010:30888610002001 $a MICROFILM M-5281 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-751131010:30888610002002 $a MICROFILM M-5282 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-759999999:30888610003001 $a NUMM-109342 $b 759999999 $c Document numérisé $d N $v [1]",
+   "$5 FR-759999999:30888610003002 $a NUMM-111432 $b 759999999 $c Document numérisé $d N $v [2]",
+   "$5 FR-759999999:30888610006001 $a NUMM-8711371 $b 759999999 $c Document numérisé $d N",
+   "$5 FR-759999999:30888610007001 $a NUMM-8711370 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "btv1b8609559p": {
+  "catalogue_ark": "ark:/12148/cb30882574t",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22marguerites+marguerite%22+and+bib.date+all+%221547%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1547    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Marguerites de la Marguerite des princesses, tresillustre royne de Navarre $b Texte imprimé"
+  ],
+  "210": [
+   "$a A Lyon $c par Jean de Tournes $d 1547"
+  ],
+  "214": [],
+  "215": [
+   "$a 2 vol. (541-[1], 342 p.) $d in-8"
+  ],
+  "300": [
+   "$a Le titre du T. II porte : \"Suyte des Marguerites de la Marguerite des princesses\""
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b8609559p",
+   "$u http://gallica.bnf.fr/ark:/12148/btv1b86095677"
+  ],
+  "930": [
+   "$5 FR-751131011:30882574001001 $a RES-YE-1628 $b 759999999 $c Tolbiac - Réserve - Magasin $d N $v t. I",
+   "$5 FR-751131011:30882574001002 $a RES-YE-1629 $b 759999999 $c Tolbiac - Réserve - Magasin $d N $v t. II",
+   "$5 FR-751041002:30882574002001 $a RESERVE 8-BL-8758 $b 759999999 $c Arsenal - Magasin $d N $v Communication soumise à autorisation",
+   "$5 FR-759999999:30882574003001 $a IFN-8609559 $b 759999999 $c Document numérisé $d N $v T. 1",
+   "$5 FR-759999999:30882574003002 $a IFN-8609567 $b 759999999 $c Document numérisé $d N $v T. 2"
+  ]
+ },
+ "bpt6k54497891": {
+  "catalogue_ark": "ark:/12148/cb46645509v",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22oeuvres+poetiques+peletier%22+and+bib.date+all+%221547%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 20201103d1547    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Les oeuvres poétiques de Jacques Peletier du Mans. Moins, & meilleur. $b Texte imprimé"
+  ],
+  "210": [],
+  "214": [],
+  "215": [
+   "$a 104 f. $d in-8"
+  ],
+  "300": [
+   "$a Au verso du titre, table du contenu : « Deux premiers livres de l'Odyssée d'Homère, Le premier livre des Georgiques de Virgile, Trois Odes d'Horace, Un [sic] Epigramme de Martial, Douze sonnets de Petrarque, Vers lyriques de l'invention de l'autheur, Congratulation sus le nouveau regne de Henri deuxième de ce nom, Epigrammes, L'antithèse du courtisan, & de l'homme de repos »",
+   "$a Extrait du privilège royal accordé le 1er septembre 1547 pour six ans à Michel de Vascosan, Galliot du Pré et Gilles Corrozet",
+   "$a Édition partagée : d'autres volumes présentent une page de titre au nom de Michel de Vascosan seul (voir notice BnF n° 31074236) ou de Galliot du Pré",
+   "$a Sig. A-N8"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k54497891"
+  ],
+  "930": [
+   "$5 FR-751131010:46645509001001 $a 8-YE-5237 $b 759999999 $c Tolbiac - Rez de Jardin - Littérature et art - Magasin $d O",
+   "$5 FR-751131011:46645509002001 $a RES-YE-1853 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131011:46645509003001 $a RES-YE-1855 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-759999999:46645509004001 $a NUMM-5449789 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k521342": {
+  "catalogue_ark": "ark:/12148/cb37252431k",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22brief+recit+navigation%22+and+bib.date+all+%221545%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19961203e19901545m  y0frey50      ba"
+  ],
+  "101": [
+   "$a frm"
+  ],
+  "200": [
+   "$a Brief recit de la navigation faicte es ysles de Canada... $b Microforme $f Jacques Cartier"
+  ],
+  "210": [
+   "$a Cambridge (Mass.) $c Omnisys $d [ca 1990]"
+  ],
+  "214": [],
+  "215": [
+   "$a 1 microfilm $d 35 mm"
+  ],
+  "300": [
+   "$a Date d'éd. du microfilm provenant d'un catalogue d'éditeur"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k521342"
+  ],
+  "930": [
+   "$5 FR-759999999:37252431001001 $a NUMM-52134 $b 759999999 $c Document numérisé $d N"
+  ]
+ },
+ "bpt6k5401626k": {
+  "catalogue_ark": "ark:/12148/cb315224967",
+  "query_url": "https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.title+all+%22libero+arbitrio%22+and+bib.date+all+%221526%22&recordSchema=unimarcxchange&maximumRecords=50",
+  "100": [
+   "$a 19970701d1526    m  y0frey50      ba"
+  ],
+  "101": [
+   "$a lat"
+  ],
+  "200": [
+   "$a Laurentius Valla De libero arbitrio . Apologia ejusdem adversus calumniatores quando super fide sua requisitus fuerat. Item contra Bartoli libellum, cui titulus de Insigniis et armis epistola... $b Texte imprimé"
+  ],
+  "210": [
+   "$a Basileae $c A. Crat. $d 1526"
+  ],
+  "214": [],
+  "215": [
+   "$a 87 p. $c marque typogr. à la fin $d in-8"
+  ],
+  "300": [
+   "$a \"À la fin\" : Basileae, apud And. Crat. mense maio, an. M.D.XXVI"
+  ],
+  "856": [
+   "$u http://gallica.bnf.fr/ark:/12148/bpt6k5401626k"
+  ],
+  "930": [
+   "$5 FR-751131011:31522496001001 $a R-53160 $b 759999999 $c Tolbiac - Réserve - Magasin $d N",
+   "$5 FR-751131007:31522496002001 $a MFILM R-53160 $b 759999999 $c Tolbiac - Rez de Jardin - Philosophie, histoire, sciences de l'homme - Magasin $d O",
+   "$5 FR-751041002:31522496003001 $a 8-T-4050 $b 759999999 $c Arsenal - Magasin $d N",
+   "$5 FR-759999999:31522496006001 $a NUMM-5401626 $b 759999999 $c Document numérisé $d N"
+  ]
+ }
+}

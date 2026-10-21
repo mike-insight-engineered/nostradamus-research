@@ -4,14 +4,16 @@
 
 | ID | Issue | Blocks |
 |---|---|---|
-| OI-01 | No witness located or authenticated; all 26 registry records are candidates entered from general knowledge | CAL-05–08 |
-| OI-02 | Licensing terms unconfirmed for BVH, Gallica, Frantext, Perseus, Huguet, DMF | CAL-02, CAL-09, retrieval |
+| OI-01 | 24 registry records located (Phase 2); none authenticated (`provenance_checked` needs a named person's catalogue evidence). See `research/pilot/provenance-issues.md` | CAL-05–08 |
+| OI-02 | Licensing: BVH conflict (NC-SA 4.0 vs NC-ND 2.0); current Gallica CGU unread (403); Frantext, Perseus, Huguet, DMF unchecked. See `research/pilot/source-licence-audit.md` | CAL-02, CAL-09, retrieval |
 | OI-03 | No qualified translators/reviewers recruited; budget not set | CAL-09, CAL-10 |
 | OI-04 | Lexical evidence store is empty; pipeline C/D retrieval currently abstains | RQ4 |
 | OI-05 | No provider or model chosen; paid use not authorised; pricing not recorded | CAL-12 |
 | OI-06 | Historical-grammar bibliography and Occitan resources need a specialist | Bibliography, M2 |
 | OI-07 | Protocols (CAL-01, 03, 04) and ADRs 0001–0004 await project-lead review | CAL-01–04 → Complete |
 | OI-08 | Decide whether the project licence is GPL-3.0-only or GPL-3.0-or-later (LICENSE text is GPL v3; `pyproject.toml` references the file only) | Packaging metadata |
+| OI-09 | Corpus-data licence separate from the software licence (ADR 0005, proposed) | committing transcriptions |
+| OI-10 | Network access from the research environment: Gallica 403; BVH XTF unreachable; USTC search JS-only | source verification |
 
 ## Software / technical
 
