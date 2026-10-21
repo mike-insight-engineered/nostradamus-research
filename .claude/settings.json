@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(:)",
+      "Edit(/.claude/skills/verify-source/**)",
+      "Edit(/.claude/skills/run-offline-demo/**)",
+      "Edit(/.claude/skills/prepare-review-package/**)"
+    ]
+  }
+}
